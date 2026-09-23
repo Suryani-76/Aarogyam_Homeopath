@@ -250,6 +250,13 @@ img {
   flex-shrink: 0;
 }
 
+@media (max-width: 1023px) {
+  #nav-btn-patient-login,
+  #nav-btn-doctor-login {
+    display: none !important;
+  }
+}
+
 /* Mobile Nav Toggle */
 .mobile-nav-toggle {
   display: none;
