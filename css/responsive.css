@@ -1,16 +1,25 @@
 /* ==========================================================================
-   AAROGYAM HOMEOPATHY - COMPREHENSIVE RESPONSIVE DESIGN SYSTEM
-   Optimized for Mobile Phones (320px - 575px), Phablets/Tablets (576px - 991px),
-   Laptops (992px - 1199px), and High-Resolution Desktops (1200px+)
+   AAROGYAM HOMEOPATHY - PIXEL-PERFECT UNIVERSAL RESPONSIVE SYSTEM
+   Strictly engineered for:
+   - Large Desktop Monitors (> 1360px)
+   - Standard Laptops & 1080p Scaled Displays (1024px – 1360px) [Fixes Cut-off Header]
+   - Tablets & Zoomed Laptops (768px – 1023px)
+   - Mobile Phones & iPhones (320px – 767px) [Fixes Horizontal Void & Hero Cut-off]
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. GLOBAL VIEWPORT & OVERFLOW RESILIENCE (All Screen Sizes)
+   1. GLOBAL VIEWPORT & OVERFLOW CONSTRAINTS (Crucial for Mobile & Laptop)
    -------------------------------------------------------------------------- */
-html, body {
-  overflow-x: hidden;
+html {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
   width: 100%;
-  max-width: 100vw;
+}
+
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100%;
   position: relative;
   -webkit-text-size-adjust: 100%;
 }
@@ -19,7 +28,19 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Touch-action optimization for mobile devices */
+/* Ensure containers and major sections never exceed viewport */
+.site-header,
+.hero-section,
+main,
+section,
+footer,
+.trust-strip,
+.container {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Touch optimization */
 button, input, select, textarea, a, .filter-btn, .portal-tab-btn, .faq-question-btn {
   touch-action: manipulation;
 }
@@ -30,7 +51,19 @@ img, svg, video {
   height: auto;
 }
 
-/* Mobile-only drawer elements hidden by default on desktop */
+/* Default state for responsive text and mobile elements */
+.hero-mobile-portals-strip {
+  display: none;
+}
+
+.btn-text-short {
+  display: none;
+}
+
+.btn-text-full {
+  display: inline;
+}
+
 .mobile-only-drawer-actions {
   display: none;
 }
@@ -52,13 +85,17 @@ img, svg, video {
 }
 
 /* --------------------------------------------------------------------------
-   2. DESKTOP & LARGE MONITORS (1200px+)
+   2. WIDE DESKTOP SCREENS (> 1360px)
    -------------------------------------------------------------------------- */
-@media (min-width: 1200px) {
+@media (min-width: 1361px) {
   .container {
-    max-width: 1180px;
+    max-width: 1200px;
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .hero-section {
+    padding: 2.75rem 0 2.5rem;
   }
 
   .hero-grid {
@@ -68,7 +105,17 @@ img, svg, video {
   }
 
   .hero-title {
-    font-size: 2.85rem;
+    font-size: 2.75rem;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: nowrap;
+  }
+
+  .hero-image-card {
+    max-width: 480px;
   }
 
   .stats-grid {
@@ -89,38 +136,153 @@ img, svg, video {
 }
 
 /* --------------------------------------------------------------------------
-   3. LAPTOPS & SMALL DESKTOPS (992px to 1199px)
+   3. STANDARD LAPTOPS & 1080p SCALED DISPLAYS (1024px to 1360px)
+      [FIXES SCREENSHOT 1: No cut-off buttons, no overcrowding, full hero visible]
    -------------------------------------------------------------------------- */
-@media (max-width: 1199px) and (min-width: 992px) {
+@media (max-width: 1360px) and (min-width: 1024px) {
   .container {
-    max-width: 960px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    max-width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
-  .nav-links {
-    gap: 0.85rem;
+  /* Header Optimization for Laptops */
+  .site-header {
+    min-height: 66px;
   }
 
-  .nav-link {
-    font-size: 0.86rem;
-    padding: 0.35rem 0.15rem;
+  .nav-container {
+    min-height: 66px;
+    padding: 0.35rem 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .brand-wrapper {
+    gap: 0.65rem;
+    flex-shrink: 0;
+  }
+
+  .brand-logo-img {
+    width: 44px;
+    height: 44px;
   }
 
   .brand-title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+    white-space: nowrap;
   }
 
+  /* Hide tagline on laptops to free up ~140px of width */
   .brand-tagline {
-    font-size: 0.72rem;
+    display: none !important;
   }
 
-  .hero-title {
-    font-size: 2.4rem;
+  /* Compact navigation links on laptops */
+  .nav-links {
+    gap: 0.65rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.15rem;
+  }
+
+  /* Streamlined action buttons on laptops */
+  .nav-actions {
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .nav-actions .btn-sm {
+    padding: 0.38rem 0.65rem;
+    font-size: 0.82rem;
+    gap: 0.35rem;
+    white-space: nowrap;
+  }
+
+  /* Show concise button labels on laptop: "Patient", "Doctor", "Book Consult" */
+  .btn-text-full {
+    display: none !important;
+  }
+
+  .btn-text-short {
+    display: inline !important;
+  }
+
+  /* Hero Section: Perfectly proportioned to be 100% visible above the fold */
+  .hero-section {
+    padding: 2.25rem 0 2rem;
   }
 
   .hero-grid {
-    gap: 2.5rem;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.25rem;
+    align-items: center;
+  }
+
+  .hero-content {
+    gap: 0.85rem;
+  }
+
+  .hero-badge-pill {
+    padding: 0.28rem 0.75rem;
+    font-size: 0.78rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 2.7vw, 2.35rem);
+    line-height: 1.18;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.02rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    max-width: 520px;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    margin-top: 0;
+  }
+
+  .hero-cta-group .btn {
+    padding: 0.7rem 1.15rem;
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  .hero-image-card {
+    max-width: 450px;
+    padding: 0.5rem;
+    border-radius: 14px;
+  }
+
+  .hero-image-card img {
+    max-height: 310px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .hero-floating-badge {
+    bottom: 12px;
+    left: 12px;
+    padding: 0.55rem 0.85rem;
+    gap: 0.6rem;
+  }
+
+  .hero-floating-badge .badge-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero-floating-badge .badge-text-main {
+    font-size: 0.85rem;
   }
 
   .footer-grid {
@@ -130,138 +292,43 @@ img, svg, video {
 }
 
 /* --------------------------------------------------------------------------
-   4. TABLETS & INTERMEDIATE SCREENS (768px to 991px)
+   4. TABLETS & PORTRAIT INTERMEDIATE SCREENS (768px to 1023px)
    -------------------------------------------------------------------------- */
-@media (max-width: 991px) {
+@media (max-width: 1023px) and (min-width: 768px) {
   section {
-    padding: 3.5rem 0;
+    padding: 3rem 0;
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
-  }
-
-  .hero-content {
-    align-items: center;
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  .hero-subtitle {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-cta-group {
-    justify-content: center;
-  }
-
-  .home-visit-box {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-  }
-
-  .conditions-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
-
-  .doctors-grid {
-    grid-template-columns: 1fr;
-    max-width: 650px;
-    margin: 0 auto;
-  }
-
-  .video-room-screens {
-    grid-template-columns: 1fr;
-  }
-
-  .video-notes-panel {
-    border-left: none;
-    border-top: 1px solid #1c362d;
-    min-height: 220px;
-  }
-
-  .portal-header-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-  }
-
-  .portal-header-actions {
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   5. MOBILE & TABLET PORTRAIT SCREENS (< 768px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 767px) {
-  /* --- A. Navigation Header on Mobile --- */
+  /* Header transitions to mobile toggle */
   .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     min-height: 64px;
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(13, 74, 56, 0.08);
   }
 
   .nav-container {
     min-height: 64px;
-    padding: 0.4rem 1rem;
-    gap: 0.5rem;
-  }
-
-  .brand-wrapper {
-    gap: 0.55rem;
-  }
-
-  .brand-logo-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 6px;
-  }
-
-  .brand-title {
-    font-size: 1.05rem;
-    line-height: 1.2;
+    padding: 0.4rem 1.25rem;
   }
 
   .brand-tagline {
-    display: none; /* Hide subtitle on mobile to avoid overcrowding */
+    display: none !important;
   }
 
-  /* Nav Actions in Top Bar: Keep only primary Book button to save space */
-  .nav-actions {
-    gap: 0.4rem;
+  .brand-title {
+    font-size: 1.1rem;
   }
 
   #nav-btn-patient-login,
   #nav-btn-doctor-login {
-    display: none !important; /* Moved neatly into mobile drawer */
+    display: none !important;
   }
 
   #nav-btn-book {
-    padding: 0.38rem 0.85rem;
-    font-size: 0.82rem;
-    font-weight: 600;
-    border-radius: var(--radius-sm);
+    padding: 0.4rem 0.85rem;
+    font-size: 0.84rem;
   }
 
-  /* Mobile Hamburger Toggle */
   .mobile-nav-toggle {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     width: 38px;
@@ -271,16 +338,8 @@ img, svg, video {
     border: 1px solid var(--color-primary-border);
     color: var(--color-primary);
     cursor: pointer;
-    padding: 0;
-    transition: all 0.2s ease;
   }
 
-  .mobile-nav-toggle:active {
-    transform: scale(0.94);
-    background: #d8ece2;
-  }
-
-  /* Slide-Down Mobile Drawer */
   .nav-links {
     position: fixed;
     top: 64px;
@@ -289,38 +348,223 @@ img, svg, video {
     background: #ffffff;
     flex-direction: column;
     align-items: stretch;
-    padding: 1.25rem 1.25rem 2rem;
+    padding: 1.25rem 1.5rem 2rem;
     box-shadow: 0 16px 36px rgba(13, 74, 56, 0.16);
     border-bottom: 2px solid var(--color-primary);
     max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    display: none;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-only-drawer-actions {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #dce8e1;
+  }
+
+  .mobile-only-drawer-actions .btn {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  /* Hero Section for Tablets */
+  .hero-section {
+    padding: 2.5rem 0 2.25rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto 1.25rem;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-image-card {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .home-visit-box {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .conditions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .video-room-screens {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. MOBILE PHONES & ALL NARROW SCREENS (< 768px: 320px - 767px)
+      [FIXES SCREENSHOTS 2 & 3: Zero horizontal void, whole hero visible]
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  /* Strict horizontal safety */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  /* --- A. Navigation Header on Mobile --- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 58px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(13, 74, 56, 0.08);
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: clip !important;
+  }
+
+  .nav-container {
+    min-height: 58px;
+    padding: 0.35rem 0.85rem;
+    gap: 0.4rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
+  }
+
+  .brand-wrapper {
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .brand-logo-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  .brand-title {
+    font-size: 1rem;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  /* COMPLETELY HIDE TAGLINE ON MOBILE */
+  .brand-tagline {
+    display: none !important;
+  }
+
+  /* COMPLETELY HIDE LONG PORTAL BUTTONS FROM HEADER ON MOBILE
+     (Prevents the massive horizontal void seen in Screenshot 3!) */
+  #nav-btn-patient-login,
+  #nav-btn-doctor-login {
+    display: none !important;
+  }
+
+  /* Keep only compact Book button in mobile header */
+  .nav-actions {
+    gap: 0.35rem;
+    flex-shrink: 0;
+  }
+
+  #nav-btn-book {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+  }
+
+  /* Mobile Hamburger Toggle */
+  .mobile-nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background: var(--color-primary-subtle);
+    border: 1px solid var(--color-primary-border);
+    color: var(--color-primary);
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .mobile-nav-toggle:active {
+    transform: scale(0.93);
+    background: #d4eae0;
+  }
+
+  /* Slide-Down Mobile Drawer */
+  .nav-links {
+    position: fixed;
+    top: 58px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 1.25rem 2rem;
+    box-shadow: 0 16px 36px rgba(13, 74, 56, 0.18);
+    border-bottom: 2px solid var(--color-primary);
+    max-height: calc(100vh - 58px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     display: none;
     z-index: 999;
     gap: 0;
+    width: 100vw;
   }
 
   .nav-links.active {
     display: flex;
-    animation: slideDownMobileNav 0.22s ease-out forwards;
+    animation: slideDownMobileNav 0.2s ease-out forwards;
   }
 
   @keyframes slideDownMobileNav {
-    from {
-      opacity: 0;
-      transform: translateY(-8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .nav-link {
     display: block;
     width: 100%;
-    padding: 0.85rem 0.5rem;
-    font-size: 1.05rem;
+    padding: 0.8rem 0.4rem;
+    font-size: 1.02rem;
     font-weight: 600;
     color: var(--color-text-main);
     border-bottom: 1px solid #edf3f0;
@@ -337,13 +581,13 @@ img, svg, video {
     display: none;
   }
 
-  /* Mobile Drawer Actions & Portal Shortcuts */
+  /* Drawer Portals & Shortcuts */
   .mobile-only-drawer-actions {
     display: flex !important;
     flex-direction: column;
-    gap: 0.65rem;
-    margin-top: 1.25rem;
-    padding-top: 1.25rem;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
     border-top: 1px solid #dce8e1;
   }
 
@@ -351,105 +595,161 @@ img, svg, video {
     font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     color: var(--color-primary);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
   }
 
   .mobile-only-drawer-actions .btn {
     width: 100%;
     justify-content: center;
     min-height: 46px;
-    font-size: 0.95rem;
+    font-size: 0.94rem;
   }
 
-  /* --- B. Top Role Demo Bar --- */
-  .role-demo-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.5rem 1rem;
-    gap: 0.4rem;
-  }
-
-  .role-demo-actions {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0.35rem;
-    padding-bottom: 2px;
-  }
-
-  .role-btn-switch {
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  /* --- C. Hero Section on Mobile --- */
+  /* --- B. Hero Section on Mobile (Fixes Screenshot 2) --- */
   .hero-section {
-    padding: 2.25rem 0 2.5rem;
+    padding: 1.25rem 0 1.75rem;
+    text-align: center;
+    overflow-x: clip;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 0.45rem;
+  }
+
+  .hero-badge-pill {
+    padding: 0.22rem 0.65rem;
+    font-size: 0.72rem;
+    margin-bottom: 0.35rem;
+    max-width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
   }
 
   .hero-title {
-    font-size: clamp(1.75rem, 5.8vw, 2.25rem);
+    font-size: clamp(1.45rem, 5.2vw, 1.8rem);
     line-height: 1.22;
+    margin-bottom: 0.45rem;
+    text-align: center;
   }
 
   .hero-subtitle {
-    font-size: 0.98rem;
-    line-height: 1.55;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin-bottom: 0.85rem;
+    text-align: center;
+    max-width: 100%;
   }
 
+  /* CTA Buttons stacked and centered on phone */
   .hero-cta-group {
+    display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 0.65rem;
-    margin-top: 0.75rem;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 0.5rem;
+    align-items: stretch;
   }
 
   .hero-cta-group .btn {
     width: 100%;
+    min-height: 44px;
+    padding: 0.6rem 0.95rem;
+    font-size: 0.9rem;
     justify-content: center;
-    min-height: 48px;
-    font-size: 0.96rem;
+    text-align: center;
   }
 
+  /* Quick Portal Touch Strip for Mobile (Patient & Doctor) */
+  .hero-mobile-portals-strip {
+    display: flex !important;
+    width: 100%;
+    max-width: 320px;
+    margin: 0.5rem auto 0;
+    gap: 0.5rem;
+  }
+
+  .hero-mobile-portals-strip .btn {
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  /* Doctor Photo Card on Phone: Compact & fully visible */
   .hero-image-wrapper {
-    margin-top: 0.5rem;
+    margin-top: 0.85rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
-  .hero-image-wrapper img {
-    max-height: 360px;
-    object-fit: cover;
+  .hero-image-card {
+    width: 100%;
+    max-width: 310px;
+    padding: 0.4rem;
     border-radius: 12px;
   }
 
-  .hero-floating-badge {
-    position: static;
-    margin-top: 0.75rem;
-    width: 100%;
-    justify-content: center;
-    padding: 0.65rem 0.85rem;
+  .hero-image-card img {
+    max-height: 190px;
+    aspect-ratio: 16/10;
+    object-fit: cover;
     border-radius: 8px;
   }
 
-  /* --- D. Trust Strip on Mobile --- */
+  /* Floating badge rests safely below the image on mobile */
+  .hero-floating-badge {
+    position: static;
+    margin-top: 0.45rem;
+    width: 100%;
+    justify-content: center;
+    padding: 0.45rem 0.65rem;
+    border-radius: 6px;
+    box-shadow: none;
+    border: 1px solid #d8ece2;
+  }
+
+  .hero-floating-badge .badge-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero-floating-badge .badge-text-top {
+    font-size: 0.68rem;
+  }
+
+  .hero-floating-badge .badge-text-main {
+    font-size: 0.82rem;
+  }
+
+  /* --- C. Trust Strip on Mobile --- */
   .trust-strip {
-    padding: 1.25rem 0;
+    padding: 1rem 0;
   }
 
   .trust-items {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.85rem;
+    gap: 0.75rem;
     align-items: start;
   }
 
   .trust-item {
-    font-size: 0.82rem;
-    gap: 0.45rem;
-    line-height: 1.35;
+    font-size: 0.8rem;
+    gap: 0.4rem;
+    line-height: 1.3;
   }
 
   .trust-item-icon-svg {
@@ -458,54 +758,54 @@ img, svg, video {
     flex-shrink: 0;
   }
 
-  /* --- E. Sections, Grids & Cards on Mobile --- */
+  /* --- D. Sections & Content on Mobile --- */
   section {
-    padding: 2.75rem 0;
+    padding: 2.25rem 0;
   }
 
   .section-header {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .section-title {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
     line-height: 1.25;
   }
 
   .section-description {
-    font-size: 0.92rem;
-    line-height: 1.55;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .philosophy-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .philosophy-card {
-    padding: 1.35rem 1.15rem;
+    padding: 1.25rem 1rem;
   }
 
   .conditions-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .condition-card {
-    padding: 1.35rem 1.15rem;
+    padding: 1.25rem 1rem;
   }
 
   .doctors-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .doctor-card {
-    padding: 1.25rem;
+    padding: 1.15rem;
   }
 
   .doctor-image-container {
-    height: 260px;
+    height: 240px;
   }
 
   .doctor-tags {
@@ -513,103 +813,89 @@ img, svg, video {
     gap: 0.35rem;
   }
 
-  /* Teleconsultation Steps Process */
   .process-steps {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .process-step {
     width: 100%;
-    text-align: left;
+    padding: 1rem;
     display: flex;
+    gap: 0.85rem;
     align-items: flex-start;
-    gap: 1rem;
-    background: #ffffff;
-    border: 1px solid #dce8e1;
-    border-radius: 10px;
-    padding: 1.15rem;
   }
 
-  .step-number {
-    flex-shrink: 0;
-    margin: 0;
-  }
-
-  /* Home Visit & Locality Checker */
   .home-visit-box {
-    padding: 1.5rem 1.2rem;
+    padding: 1.25rem 1rem;
     border-radius: 12px;
   }
 
   .locality-select-wrap {
     flex-direction: column;
     width: 100%;
-    gap: 0.75rem;
+    gap: 0.65rem;
   }
 
   .locality-select-wrap select,
   .locality-select-wrap .form-select,
   .locality-select-wrap button {
     width: 100%;
-    min-height: 48px;
+    min-height: 46px;
   }
 
-  /* Testimonials */
   .testimonials-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .testimonial-card {
-    padding: 1.35rem 1.15rem;
+    padding: 1.25rem 1rem;
   }
 
-  /* FAQ Accordion */
   .faq-question-btn {
-    padding: 1rem 1.15rem;
-    font-size: 0.95rem;
-    text-align: left;
-    min-height: 52px;
+    padding: 0.85rem 1rem;
+    font-size: 0.92rem;
+    min-height: 48px;
   }
 
   .faq-answer {
-    padding: 0.85rem 1.15rem 1.15rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 1rem 1rem;
+    font-size: 0.88rem;
   }
 
-  /* --- F. Footer on Mobile --- */
+  /* --- E. Footer on Mobile --- */
   .site-footer {
-    padding: 3rem 0 1.5rem;
+    padding: 2.5rem 0 1.25rem;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 1.75rem;
+    margin-bottom: 1.75rem;
   }
 
   .footer-legal-box {
-    font-size: 0.8rem;
-    padding: 0.9rem 1rem;
-    line-height: 1.5;
+    font-size: 0.78rem;
+    padding: 0.85rem 0.95rem;
+    line-height: 1.45;
   }
 
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .footer-policy-links {
     flex-wrap: wrap;
-    gap: 0.5rem 1rem;
+    gap: 0.45rem 0.85rem;
   }
 
-  /* --- G. Modals & Forms on Mobile --- */
+  /* --- F. Modals System on Mobile --- */
   .modal-overlay {
-    padding: 10px;
+    padding: 8px;
     align-items: center;
   }
 
@@ -622,100 +908,68 @@ img, svg, video {
   }
 
   .modal-header {
-    padding: 1.15rem 1.25rem;
+    padding: 1rem 1.15rem;
   }
 
   .modal-header h3 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .modal-close-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
   }
 
   .modal-body {
-    padding: 1.25rem 1.15rem;
+    padding: 1.15rem 1rem;
     -webkit-overflow-scrolling: touch;
   }
 
   .modal-footer {
     flex-direction: column-reverse;
-    gap: 0.6rem;
-    padding: 1rem 1.15rem;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
   }
 
   .modal-footer .btn {
     width: 100%;
     justify-content: center;
-    min-height: 48px;
-    font-size: 0.95rem;
+    min-height: 46px;
+    font-size: 0.94rem;
   }
 
   .form-row-2, .form-row-3 {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 0.65rem;
   }
 
-  /* Important for mobile browsers: font-size 16px prevents iOS automatic viewport zoom */
+  /* 16px font size prevents iOS auto-zoom */
   .form-input,
   .form-select,
   .form-textarea {
     font-size: 16px !important;
-    min-height: 48px;
+    min-height: 46px;
   }
 
-  .form-textarea {
-    min-height: 90px;
-  }
-
-  /* Video Consultation Modal on Mobile */
-  .video-room-topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
-    padding: 0.85rem 1rem;
-  }
-
-  .video-room-controls {
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    padding: 0.85rem 1rem;
-    justify-content: center;
-  }
-
-  .ctrl-btn {
-    width: 46px;
-    height: 46px;
-  }
-
-  .btn-end-call {
-    width: auto;
-    padding: 0 1.25rem;
-  }
-
-  /* --- H. Clinical Portals (Patient & Doctor) on Mobile --- */
+  /* --- G. Clinical Portals (Patient & Doctor) on Mobile --- */
   .portal-view {
-    padding: 1.25rem 0 3rem;
+    padding: 1rem 0 2.5rem;
   }
 
   .portal-header-card {
     flex-direction: column;
     align-items: stretch;
     text-align: center;
-    padding: 1.25rem 1rem;
-    gap: 1rem;
+    padding: 1.15rem 0.85rem;
+    gap: 0.85rem;
   }
 
   .portal-user-meta {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 0.75rem;
+    gap: 0.65rem;
   }
 
   .portal-header-actions {
@@ -730,32 +984,31 @@ img, svg, video {
     min-height: 44px;
   }
 
-  /* Scrollable horizontal portal navigation tabs on mobile */
   .portal-nav-tabs {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     gap: 0.35rem;
-    padding-bottom: 8px;
-    margin-bottom: 1.25rem;
-    scrollbar-width: none; /* Firefox */
+    padding-bottom: 6px;
+    margin-bottom: 1rem;
+    scrollbar-width: none;
   }
 
   .portal-nav-tabs::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
   }
 
   .portal-tab-btn {
-    padding: 0.65rem 0.95rem;
-    font-size: 0.85rem;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.84rem;
     white-space: nowrap;
     flex-shrink: 0;
   }
 
   .portal-stat-grid {
     grid-template-columns: 1fr;
-    gap: 0.85rem;
+    gap: 0.75rem;
   }
 
   .table-card {
@@ -765,69 +1018,45 @@ img, svg, video {
   }
 
   .clinical-table {
-    min-width: 580px;
+    min-width: 560px;
     font-size: 0.82rem;
   }
 
   .appointments-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .upload-dropzone {
-    padding: 1.5rem 1rem;
+    gap: 0.85rem;
   }
 }
 
 /* --------------------------------------------------------------------------
-   6. COMPACT MOBILE SCREENS (< 420px: iPhone SE, Galaxy A, Pixel)
+   6. EXTRA COMPACT PHONES (< 360px: Small Screens)
    -------------------------------------------------------------------------- */
-@media (max-width: 420px) {
+@media (max-width: 360px) {
   .container {
-    padding-left: 0.85rem;
-    padding-right: 0.85rem;
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
   }
 
   .brand-title {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
   }
 
   .brand-logo-img {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
   }
 
   #nav-btn-book {
-    padding: 0.35rem 0.65rem;
-    font-size: 0.78rem;
+    padding: 0.3rem 0.55rem;
+    font-size: 0.74rem;
   }
 
   .hero-title {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
 
   .trust-items {
     grid-template-columns: 1fr;
-    gap: 0.65rem;
-  }
-
-  .table-filter-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .table-filter-btns {
-    width: 100%;
-    overflow-x: auto;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0.35rem;
-    padding-bottom: 4px;
-  }
-
-  .table-filter-btns .filter-btn {
-    white-space: nowrap;
-    flex-shrink: 0;
+    gap: 0.5rem;
   }
 }
