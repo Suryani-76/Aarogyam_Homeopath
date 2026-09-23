@@ -358,12 +358,41 @@ class AppController {
     });
   }
 
+  closeMobileNav() {
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+    if (toggle && toggle.classList.contains('is-open')) {
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+
   bindMobileNav() {
     const toggle = document.querySelector('.mobile-nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     if (toggle && navLinks) {
-      toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navLinks.classList.toggle('active');
+        toggle.classList.toggle('is-open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      // Auto-close when tapping any navigation link inside drawer
+      navLinks.querySelectorAll('a.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          this.closeMobileNav();
+        });
+      });
+
+      // Auto-close when clicking anywhere outside drawer
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
+          this.closeMobileNav();
+        }
       });
     }
   }
