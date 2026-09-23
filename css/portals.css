@@ -1,0 +1,688 @@
+/* Aarogyam Homeopathy - Dual Portals (Patient & Doctor) Styling */
+
+/* Portal Container View */
+.portal-view {
+  display: none;
+  min-height: calc(100vh - 120px);
+  background-color: var(--color-bg-page);
+  padding: 2.5rem 0 4rem;
+}
+
+.portal-view.active {
+  display: block;
+}
+
+/* Portal Top Bar / Banner */
+.portal-header-card {
+  background: white;
+  border: var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.portal-user-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.portal-user-avatar {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 2px solid var(--color-primary-border);
+}
+
+.portal-user-avatar-initials {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: var(--font-family-heading);
+}
+
+.portal-user-details h2 {
+  font-size: 1.45rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.2rem;
+}
+
+.portal-user-details p {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+}
+
+.portal-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Portal Navigation Tabs */
+.portal-nav-tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #dce8e1;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.portal-tab-btn {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-family-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.portal-tab-btn:hover {
+  color: var(--color-primary);
+  background: rgba(13, 74, 56, 0.04);
+}
+
+.portal-tab-btn.active {
+  color: var(--color-primary);
+  background: white;
+  border: 1px solid #dce8e1;
+  border-bottom: 2px solid white;
+  margin-bottom: -1px;
+}
+
+.portal-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 3px 3px 0 0;
+}
+
+.portal-tab-badge {
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+}
+
+/* Portal Sub-Views */
+.portal-subtab-pane {
+  display: none;
+}
+
+.portal-subtab-pane.active {
+  display: block;
+}
+
+/* Metrics Dashboard Cards (Doctor Portal) */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: white;
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.metric-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.metric-icon-box.amber {
+  background: var(--color-warning-bg);
+  color: var(--color-warning-amber);
+}
+
+.metric-icon-box.blue {
+  background: var(--color-info-bg);
+  color: var(--color-info);
+}
+
+.metric-icon-box.green {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.metric-data h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.1;
+}
+
+.metric-data p {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* Appointment Cards & Tables */
+.appointments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.appointment-card {
+  background: white;
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.appointment-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-border);
+}
+
+.appointment-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: var(--border-subtle);
+}
+
+.appointment-type-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.appointment-datetime {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.appointment-doctor {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.appointment-concern {
+  font-size: 0.86rem;
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.85rem;
+  color: var(--color-text-main);
+  margin-bottom: 1.25rem;
+}
+
+.appointment-card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Clinical Table (Doctor Portal Queue) */
+.table-card {
+  background: white;
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.table-filter-bar {
+  padding: 1.25rem 1.5rem;
+  border-bottom: var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.table-filter-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  background: none;
+  border: 1px solid #d5e3dc;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.filter-btn.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.clinical-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.clinical-table th {
+  background: #f8fbf9;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  border-bottom: var(--border-light);
+}
+
+.clinical-table td {
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #edf3f0;
+  color: var(--color-text-secondary);
+}
+
+.clinical-table tbody tr:hover {
+  background-color: #fbfdfc;
+}
+
+.patient-cell-name {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.patient-cell-sub {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* Document & Reports Vault */
+.upload-dropzone {
+  border: 2px dashed #b8d4c7;
+  background: #fbfdfc;
+  border-radius: var(--radius-md);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  margin-bottom: 2rem;
+}
+
+.upload-dropzone:hover {
+  border-color: var(--color-primary);
+  background: #f0f7f3;
+}
+
+.upload-dropzone-icon {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.upload-dropzone h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  color: var(--color-primary-dark);
+}
+
+.upload-dropzone p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.reports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.report-item-card {
+  background: white;
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+.report-item-card:hover {
+  border-color: var(--color-primary-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.report-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.report-file-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: #fef2f2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.report-file-icon.image {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.report-item-title {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  font-size: 0.95rem;
+}
+
+.report-item-sub {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.report-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Digital Prescriptions & Care Plans */
+.careplan-card {
+  background: white;
+  border: 1px solid var(--color-primary-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+
+.careplan-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: var(--color-primary);
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+.careplan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #e2ece7;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.careplan-doctor-sign {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.careplan-doctor-sign strong {
+  color: var(--color-primary-dark);
+  display: block;
+  font-size: 1.05rem;
+}
+
+.careplan-section-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.remedy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+}
+
+.remedy-table th {
+  background: #f4f8f5;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.82rem;
+  text-align: left;
+  border: 1px solid #e1eee7;
+  color: var(--color-primary-dark);
+}
+
+.remedy-table td {
+  padding: 0.65rem 0.75rem;
+  font-size: 0.88rem;
+  border: 1px solid #e1eee7;
+  color: var(--color-text-secondary);
+}
+
+.careplan-advice-box {
+  background: #f9fbf9;
+  border: 1px solid #e3ede7;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.careplan-safety-reminder {
+  background: #fef8f8;
+  border: 1px solid #fbd5d5;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.82rem;
+  color: #991b1b;
+}
+
+/* Teleconsultation Video Room (Simulated) */
+.video-room-container {
+  display: none;
+  background: #0f1f1a;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-dropdown);
+  color: white;
+  margin: 1.5rem 0;
+}
+
+.video-room-container.active {
+  display: block;
+}
+
+.video-room-topbar {
+  padding: 1rem 1.5rem;
+  background: #071511;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1c362d;
+}
+
+.video-room-screens {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  min-height: 480px;
+  background: #091310;
+  position: relative;
+}
+
+.main-video-feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #112620;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-video-feed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+.video-feed-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.self-video-pip {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 170px;
+  height: 120px;
+  background: #1c3930;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+.video-notes-panel {
+  background: #0d1e19;
+  border-left: 1px solid #1c362d;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-notes-panel h4 {
+  color: #cde4d9;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.video-notes-area {
+  flex-grow: 1;
+  background: #091713;
+  border: 1px solid #1c362d;
+  border-radius: var(--radius-sm);
+  color: #e5f1ec;
+  padding: 0.75rem;
+  font-family: var(--font-family-body);
+  font-size: 0.88rem;
+  resize: none;
+  margin-bottom: 1rem;
+}
+
+.video-room-controls {
+  padding: 1.25rem;
+  background: #071511;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  border-top: 1px solid #1c362d;
+}
+
+.ctrl-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #19362c;
+  border: 1px solid #2d5547;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ctrl-btn:hover {
+  background: #254d3f;
+}
+
+.ctrl-btn.btn-end-call {
+  background: #dc2626;
+  border-color: #ef4444;
+}
+
+.ctrl-btn.btn-end-call:hover {
+  background: #b91c1c;
+}
