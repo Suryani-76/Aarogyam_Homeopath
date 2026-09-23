@@ -736,8 +736,8 @@
       </div>
 
       <!-- Sub-Tab 1: Appointments -->
-      <div id="patient-tab-appointments" class="portal-subtab-pane active">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+      <div id="patient-tab-appointments" class="portal-subtab-pane patient-subtab-pane active">
+        <div class="portal-section-header">
           <h3 style="font-size:1.3rem;">Scheduled Consultations</h3>
           <button class="btn btn-sm btn-secondary" onclick="consultationManager.openBookingModal('Video Teleconsultation')">
             + Schedule Video Consult
@@ -747,7 +747,7 @@
       </div>
 
       <!-- Sub-Tab 2: Medical Records & Report Vault -->
-      <div id="patient-tab-records" class="portal-subtab-pane">
+      <div id="patient-tab-records" class="portal-subtab-pane patient-subtab-pane">
         <div class="upload-dropzone" id="btn-open-upload-modal">
           <div class="upload-dropzone-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
@@ -762,8 +762,8 @@
       </div>
 
       <!-- Sub-Tab 3: Prescriptions & Care Plans -->
-      <div id="patient-tab-prescriptions" class="portal-subtab-pane">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+      <div id="patient-tab-prescriptions" class="portal-subtab-pane patient-subtab-pane">
+        <div class="portal-section-header">
           <h3 style="font-size:1.3rem;">Doctor's Prescriptions & Protocols</h3>
           <span style="font-size:0.85rem; color:#6e847b;">Issued by Dr. Harini Srinivasan (BHMS)</span>
         </div>
@@ -771,8 +771,8 @@
       </div>
 
       <!-- Sub-Tab 4: Health Summary / Profile -->
-      <div id="patient-tab-profile" class="portal-subtab-pane">
-        <div style="background:white; border:1px solid #dce8e1; border-radius:10px; padding:2rem; max-width:760px;">
+      <div id="patient-tab-profile" class="portal-subtab-pane patient-subtab-pane">
+        <div class="patient-profile-card">
           <h3 style="margin-bottom:1.25rem; color:#0d4a38;">Registered Clinical Profile</h3>
           
           <div class="form-row-2">
@@ -909,7 +909,7 @@
       </div>
 
       <!-- Sub-Tab 1: Consultation Queue Table -->
-      <div id="doctor-tab-queue" class="doctor-subtab-pane active">
+      <div id="doctor-tab-queue" class="portal-subtab-pane doctor-subtab-pane active">
         <div class="table-card">
           <div class="table-filter-bar">
             <h3 style="font-size:1.15rem; color:#0d4a38;">Appointment Schedule & Cases</h3>
@@ -937,7 +937,7 @@
       </div>
 
       <!-- Sub-Tab 2: Patient Reports -->
-      <div id="doctor-tab-reports" class="doctor-subtab-pane">
+      <div id="doctor-tab-reports" class="portal-subtab-pane doctor-subtab-pane">
         <div style="margin-bottom:1.5rem;">
           <h3 style="font-size:1.25rem;">Patient Diagnostic Scans & Prescriptions</h3>
           <p style="font-size:0.88rem; color:#4a5f56;">Review lab reports, allergy panels, and conventional prescriptions submitted by patients.</p>
@@ -946,7 +946,7 @@
       </div>
 
       <!-- Sub-Tab 3: Home Visit Dispatcher -->
-      <div id="doctor-tab-homevisits" class="doctor-subtab-pane">
+      <div id="doctor-tab-homevisits" class="portal-subtab-pane doctor-subtab-pane">
         <div style="margin-bottom:1.5rem;">
           <h3 style="font-size:1.25rem;">Hyderabad Home Visit Requests</h3>
           <p style="font-size:0.88rem; color:#4a5f56;">Evaluate locality appropriateness, patient condition, and practitioner schedule for in-person home visits.</p>

@@ -57,7 +57,7 @@ class PortalsManager {
 
   switchPatientTab(tabId) {
     document.querySelectorAll('.patient-tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.patient-subtab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('#patient-portal-view .portal-subtab-pane, #patient-portal-view .patient-subtab-pane').forEach(p => p.classList.remove('active'));
 
     const activeBtn = document.querySelector(`.patient-tab-btn[data-tab="${tabId}"]`);
     const activePane = document.getElementById(`patient-tab-${tabId}`);
@@ -72,7 +72,7 @@ class PortalsManager {
 
   switchDoctorTab(tabId) {
     document.querySelectorAll('.doctor-tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.doctor-subtab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('#doctor-portal-view .portal-subtab-pane, #doctor-portal-view .doctor-subtab-pane').forEach(p => p.classList.remove('active'));
 
     const activeBtn = document.querySelector(`.doctor-tab-btn[data-tab="${tabId}"]`);
     const activePane = document.getElementById(`doctor-tab-${tabId}`);

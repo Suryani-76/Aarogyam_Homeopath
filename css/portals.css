@@ -134,12 +134,16 @@
 }
 
 /* Portal Sub-Views */
-.portal-subtab-pane {
-  display: none;
+.portal-subtab-pane,
+.doctor-subtab-pane,
+.patient-subtab-pane {
+  display: none !important;
 }
 
-.portal-subtab-pane.active {
-  display: block;
+.portal-subtab-pane.active,
+.doctor-subtab-pane.active,
+.patient-subtab-pane.active {
+  display: block !important;
 }
 
 /* Metrics Dashboard Cards (Doctor Portal) */
@@ -200,6 +204,14 @@
   font-size: 0.85rem;
   color: var(--color-text-secondary);
   font-weight: 500;
+}
+
+.patient-profile-card {
+  background: white;
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  max-width: 760px;
 }
 
 /* Appointment Cards & Tables */
