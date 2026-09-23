@@ -342,6 +342,60 @@ class AppController {
     if (modal) modal.classList.remove('active');
   }
 
+  openQrModal() {
+    const modal = document.getElementById('modal-qr-code');
+    if (modal) modal.classList.add('active');
+  }
+
+  closeQrModal() {
+    const modal = document.getElementById('modal-qr-code');
+    if (modal) modal.classList.remove('active');
+  }
+
+  closeMobileNav() {
+    const navLinks = document.querySelector('.nav-links');
+    const backdrop = document.getElementById('mobile-nav-backdrop');
+    if (navLinks) navLinks.classList.remove('active');
+    if (backdrop) backdrop.classList.remove('active');
+  }
+
+  bindMobileNav() {
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const backdrop = document.getElementById('mobile-nav-backdrop');
+
+    if (toggle && navLinks) {
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navLinks.classList.toggle('active');
+        if (backdrop) backdrop.classList.toggle('active', isOpen);
+      });
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener('click', () => {
+        this.closeMobileNav();
+      });
+    }
+
+    // Close mobile nav when clicking any nav link
+    document.querySelectorAll('.nav-links .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        this.closeMobileNav();
+      });
+    });
+
+    // Close when pressing Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.closeMobileNav();
+        this.closeQrModal();
+        this.closePatientLogin();
+        this.closeDoctorLogin();
+      }
+    });
+  }
+
   bindFAQAccordion() {
     document.querySelectorAll('.faq-question-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -356,45 +410,6 @@ class AppController {
         }
       });
     });
-  }
-
-  closeMobileNav() {
-    const toggle = document.querySelector('.mobile-nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navLinks && navLinks.classList.contains('active')) {
-      navLinks.classList.remove('active');
-    }
-    if (toggle && toggle.classList.contains('is-open')) {
-      toggle.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  }
-
-  bindMobileNav() {
-    const toggle = document.querySelector('.mobile-nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (toggle && navLinks) {
-      toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = navLinks.classList.toggle('active');
-        toggle.classList.toggle('is-open', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-
-      // Auto-close when tapping any navigation link inside drawer
-      navLinks.querySelectorAll('a.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          this.closeMobileNav();
-        });
-      });
-
-      // Auto-close when clicking anywhere outside drawer
-      document.addEventListener('click', (e) => {
-        if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
-          this.closeMobileNav();
-        }
-      });
-    }
   }
 
   showToast(message, type = 'info') {

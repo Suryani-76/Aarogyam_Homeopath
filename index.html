@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aarogyam Homeopathy | Personalized Care, Hyderabad & Teleconsultation</title>
   <meta name="description" content="Personalized Homeopathic Care by experienced BHMS physicians. Online video teleconsultations and selective home visits in Hyderabad. Compassionate care from home to healing.">
 
@@ -32,22 +32,30 @@
       </a>
 
       <nav class="main-nav">
-        <ul class="nav-links" id="main-nav-links">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#doctors" class="nav-link">Doctors</a></li>
-          <li><a href="#treatments" class="nav-link">Treatments</a></li>
-          <li><a href="#teleconsultation" class="nav-link">Teleconsult</a></li>
-          <li><a href="#home-visits" class="nav-link">Home Visits</a></li>
-          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-          <li><a href="#faqs" class="nav-link">FAQs</a></li>
-          <li class="mobile-drawer-portals">
-            <button class="btn btn-portal-patient btn-sm w-100" onclick="app.openPatientLogin(); app.closeMobileNav();" type="button">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link" onclick="app.closeMobileNav()">About</a></li>
+          <li><a href="#doctors" class="nav-link" onclick="app.closeMobileNav()">Doctors</a></li>
+          <li><a href="#treatments" class="nav-link" onclick="app.closeMobileNav()">Treatments</a></li>
+          <li><a href="#teleconsultation" class="nav-link" onclick="app.closeMobileNav()">Teleconsult</a></li>
+          <li><a href="#home-visits" class="nav-link" onclick="app.closeMobileNav()">Home Visits</a></li>
+          <li><a href="#testimonials" class="nav-link" onclick="app.closeMobileNav()">Testimonials</a></li>
+          <li><a href="#faqs" class="nav-link" onclick="app.closeMobileNav()">FAQs</a></li>
+          <li class="mobile-only-drawer-actions">
+            <div class="mobile-drawer-title">Clinical Portals & Services</div>
+            <button class="btn btn-portal-patient btn-block" onclick="app.openPatientLogin(); app.closeMobileNav();" style="display:inline-flex; align-items:center; gap:0.5rem;">
               <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span>Patient Portal</span>
+              <span>Patient Portal Login</span>
             </button>
-            <button class="btn btn-portal-doctor btn-sm w-100" onclick="app.openDoctorLogin(); app.closeMobileNav();" type="button">
+            <button class="btn btn-portal-doctor btn-block" onclick="app.openDoctorLogin(); app.closeMobileNav();" style="display:inline-flex; align-items:center; gap:0.5rem;">
               <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3"/><circle cx="18" cy="14" r="3"/><path d="M9 12.5v3.5a4 4 0 0 0 4 4h2a3 3 0 0 0 3-3"/></svg>
-              <span>Doctor Portal</span>
+              <span>Doctor Portal Login</span>
+            </button>
+            <button class="btn btn-primary btn-block" onclick="consultationManager.openBookingModal(); app.closeMobileNav();">
+              <span>Book Video Consultation</span>
+            </button>
+            <button class="btn btn-outline btn-block" onclick="app.openQrModal(); app.closeMobileNav();" style="border-color:#c7ded3; color:var(--color-primary); display:inline-flex; align-items:center; justify-content:center; gap:0.5rem;">
+              <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              <span>Clinic QR Code</span>
             </button>
           </li>
         </ul>
@@ -66,14 +74,15 @@
           </button>
         </div>
 
-        <button class="mobile-nav-toggle" id="btn-mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" type="button">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle-btn" aria-label="Toggle Navigation Menu">
+          <svg class="clinical-icon" width="22" height="22" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </nav>
     </div>
   </header>
+
+  <!-- Backdrop Overlay for Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" onclick="app.closeMobileNav()"></div>
 
   <!-- ========================================================================= -->
   <!-- 1. PUBLIC CLINIC WEBSITE VIEW -->
@@ -1497,6 +1506,38 @@
 
 
   <!-- ========================================================================= -->
+  <!-- MODAL: CLINIC QR CODE SCAN & SHARE -->
+  <!-- ========================================================================= -->
+  <div class="modal-overlay" id="modal-qr-code">
+    <div class="modal-dialog" style="max-width: 440px; text-align: center;">
+      <div class="modal-header">
+        <div>
+          <h3>Aarogyam Clinic QR Code</h3>
+          <span style="font-size:0.82rem; color:#6e847b;">Scan from your mobile camera to open platform</span>
+        </div>
+        <button class="modal-close-btn" onclick="app.closeQrModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 1.5rem 1.25rem;">
+        <div style="background:#ffffff; border:1px solid #c7ded3; border-radius:12px; padding:1.25rem; box-shadow:0 4px 16px rgba(13,74,56,0.08); display:inline-block; max-width:100%;">
+          <img src="assets/aarogyam_qr_card.png" alt="Aarogyam Homeopathy QR Code" style="max-width:280px; width:100%; border-radius:8px; margin:0 auto; display:block;" id="img-qr-card-display">
+        </div>
+        <p style="font-size:0.88rem; color:#42574e; margin-top:1rem; line-height:1.5;">
+          Point your smartphone's camera or Google Lens at this QR code to instantly launch the website and Patient Portal on your phone.
+        </p>
+        <div style="margin-top:1rem; display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
+          <a href="assets/aarogyam_qr_card.png" download="Aarogyam_Homeopathy_QR.png" class="btn btn-sm btn-primary">
+            Download QR Card
+          </a>
+          <button type="button" class="btn btn-sm btn-outline" onclick="navigator.clipboard.writeText('https://hsrinivasan768.github.io/Aarogyam_Homeopath/').then(() => app.showToast('Website link copied to clipboard!', 'success'))">
+            Copy Link
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
   <!-- FOOTER & LEGAL DISCLAIMERS (Section 17 of PDF) -->
   <!-- ========================================================================= -->
   <footer class="site-footer">
@@ -1541,6 +1582,7 @@
             <li><a href="javascript:void(0)" onclick="consultationManager.openBookingModal('Video Teleconsultation')">Book Video Consult</a></li>
             <li><a href="javascript:void(0)" onclick="consultationManager.openBookingModal('Home Visit Request')">Request Home Visit</a></li>
             <li><a href="javascript:void(0)" onclick="app.switchView('patient')">Medical Records Vault</a></li>
+            <li><a href="javascript:void(0)" onclick="app.openQrModal()">Mobile Clinic QR Code</a></li>
           </ul>
         </div>
 
