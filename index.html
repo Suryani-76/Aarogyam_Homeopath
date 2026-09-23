@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aarogyam Homeopathy | Personalized Care, Hyderabad & Teleconsultation</title>
+  <meta name="description" content="Personalized Homeopathic Care by experienced BHMS physicians. Online video teleconsultations and selective home visits in Hyderabad. Compassionate care from home to healing.">
+
+  <!-- Clinical Typography from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/portals.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Main Website Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand-wrapper" id="brand-home-link">
+        <img src="assets/logo.jpg" alt="Aarogyam Homeopathy Logo" class="brand-logo-img">
+        <div class="brand-text-block">
+          <span class="brand-title">Aarogyam Homeopathy</span>
+          <span class="brand-tagline">Personalized Homeopathy • From Home to Healing</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#doctors" class="nav-link">Doctors</a></li>
+          <li><a href="#treatments" class="nav-link">Treatments</a></li>
+          <li><a href="#teleconsultation" class="nav-link">Teleconsult</a></li>
+          <li><a href="#home-visits" class="nav-link">Home Visits</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#faqs" class="nav-link">FAQs</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn btn-portal-patient btn-sm" onclick="app.openPatientLogin()" id="nav-btn-patient-login" title="Open Patient Portal">
+            <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Patient Portal</span>
+          </button>
+          <button class="btn btn-portal-doctor btn-sm" onclick="app.openDoctorLogin()" id="nav-btn-doctor-login" title="Open Doctor Portal">
+            <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3"/><circle cx="18" cy="14" r="3"/><path d="M9 12.5v3.5a4 4 0 0 0 4 4h2a3 3 0 0 0 3-3"/></svg>
+            <span>Doctor Portal</span>
+          </button>
+          <button class="btn btn-primary btn-sm" onclick="consultationManager.openBookingModal()" id="nav-btn-book">
+            Book Consult
+          </button>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+          <svg class="clinical-icon" width="22" height="22" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 1. PUBLIC CLINIC WEBSITE VIEW -->
+  <!-- ========================================================================= -->
+  <main id="public-site-view">
+
+    <!-- Hero Section - Section 4 -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-pill">
+            <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Accredited BHMS Practice • Hyderabad & Teleconsultation</span>
+          </div>
+          <h1 class="hero-title">Personalized Homeopathic Care, Wherever You Are.</h1>
+          <p class="hero-subtitle">
+            Consult experienced BHMS practitioners online from the comfort of your home. When an in-person assessment is appropriate, we arrange personalized home visits in selected Hyderabad locations.
+          </p>
+          <div class="hero-cta-group">
+            <button class="btn btn-primary btn-lg" onclick="consultationManager.openBookingModal('Video Teleconsultation')">
+              <svg class="clinical-icon" width="18" height="18" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              <span>Book a Teleconsultation</span>
+            </button>
+            <button class="btn btn-secondary btn-lg" onclick="consultationManager.openBookingModal('Home Visit Request')">
+              <svg class="clinical-icon" width="18" height="18" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span>Request a Home Visit</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-image-card">
+            <img src="assets/dr_harini_official.jpg?v=20260923" alt="Dr. Harini Srinivasan BHMS - Aarogyam Homeopathy">
+            <div class="hero-floating-badge">
+              <div class="badge-icon">
+                <svg class="clinical-icon" width="22" height="22" viewBox="0 0 24 24"><path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3"/><circle cx="18" cy="14" r="3"/><path d="M9 12.5v3.5a4 4 0 0 0 4 4h2a3 3 0 0 0 3-3"/></svg>
+              </div>
+              <div>
+                <div class="badge-text-top">Clinical Care</div>
+                <div class="badge-text-main">10+ Years Patient Experience</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip - Section 4 -->
+    <div class="trust-strip">
+      <div class="container trust-items">
+        <div class="trust-item">
+          <svg class="trust-item-icon-svg" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+          <span>BHMS Qualified Physicians</span>
+        </div>
+        <div class="trust-item">
+          <svg class="trust-item-icon-svg" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span>Online Video & Phone Consultations</span>
+        </div>
+        <div class="trust-item">
+          <svg class="trust-item-icon-svg" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Selected Hyderabad Home Visits</span>
+        </div>
+        <div class="trust-item">
+          <svg class="trust-item-icon-svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Languages: English • Telugu • Tamil</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patient Care Philosophy - Section 5 -->
+    <section id="about" class="bg-white">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Our Clinical Foundation</span>
+          <h2 class="section-title">Patient Care Philosophy</h2>
+          <p class="section-description">
+            A patient-first homeopathic practice combining personalized BHMS consultations, convenient telemedicine, and continuous care that respects your entire health journey.
+          </p>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">
+              <svg class="clinical-icon clinical-icon-xl" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
+            <h3>Listen First</h3>
+            <p>We begin by understanding your detailed symptoms, health history, lifestyle context, emotional stressors, and treatment goals.</p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">
+              <svg class="clinical-icon clinical-icon-xl" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="12" cy="14" r="3"/><line x1="12" y1="11" x2="12" y2="17"/></svg>
+            </div>
+            <h3>Individualized Consultation</h3>
+            <p>Homeopathic care is meticulously planned around the individual patient and clinical presentation rather than a one-size-fits-all approach.</p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">
+              <svg class="clinical-icon clinical-icon-xl" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
+            <h3>Continuity of Care</h3>
+            <p>Structured follow-up reviews evaluate symptoms, monitor clinical treatment response, and adjust prescriptions collaboratively.</p>
+          </div>
+
+          <div class="philosophy-card">
+            <div class="philosophy-icon-wrap">
+              <svg class="clinical-icon clinical-icon-xl" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10A10 10 0 0 1 2 12C2 6.477 6.477 2 12 2z"/><path d="M12 6v12"/><path d="M12 12c-3 0-5-2-5-5"/><path d="M12 14c3 0 5-2 5-5"/></svg>
+            </div>
+            <h3>Whole-Person Support</h3>
+            <p>Where appropriate, supportive psychological counselling and practical lifestyle guidance complement clinical homeopathic care.</p>
+          </div>
+
+          <div class="philosophy-card safety-pillar">
+            <div class="philosophy-icon-wrap">
+              <svg class="clinical-icon clinical-icon-xl" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Safety First</h3>
+            <p>Serious or worsening symptoms receive immediate emergency referral. Homeopathy supports your wellness and never delays conventional medical care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conditions & Areas of Care - Section 6 -->
+    <section id="treatments" class="bg-subtle">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Scope of Practice</span>
+          <h2 class="section-title">Conditions & Areas of Care</h2>
+          <p class="section-description">
+            We provide supportive clinical assessment and personalized homeopathic care for chronic and recurrent concerns without unverified claims or guaranteed outcomes.
+          </p>
+        </div>
+
+        <div class="conditions-grid">
+          <div class="condition-card">
+            <div class="condition-header">
+              <div class="condition-icon">
+                <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="condition-title">Skin & Hair Concerns</h3>
+                <span class="badge badge-primary">Dermatological Assessment</span>
+              </div>
+            </div>
+            <p class="condition-body">
+              Careful evaluation for psoriasis, eczema, allergic dermatitis, and chronic scalp or skin complaints. Prescriptions are tailored to constitutional triggers and flare patterns.
+            </p>
+            <div class="condition-clinical-note">
+              <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>Focuses on gentle constitutional balance and barrier support.</span>
+            </div>
+          </div>
+
+          <div class="condition-card">
+            <div class="condition-header">
+              <div class="condition-icon">
+                <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div>
+                <h3 class="condition-title">Digestive & Gut Concerns</h3>
+                <span class="badge badge-primary">Gastrointestinal Support</span>
+              </div>
+            </div>
+            <p class="condition-body">
+              Assessment of recurrent digestive symptoms, acidity, bloating, irritable bowel tendencies, and sluggish metabolism with careful attention to diet and personal medical history.
+            </p>
+            <div class="condition-clinical-note">
+              <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>Integrates dietary modifications with individualized remedies.</span>
+            </div>
+          </div>
+
+          <div class="condition-card">
+            <div class="condition-header">
+              <div class="condition-icon">
+                <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div>
+                <h3 class="condition-title">Kidney & Urinary Concerns</h3>
+                <span class="badge badge-primary">Renal Supportive Care</span>
+              </div>
+            </div>
+            <p class="condition-body">
+              Supportive homeopathic consultation for recurrent urinary symptoms and chronic complaints. Patients with suspected kidney stones require formal diagnostic evaluation.
+            </p>
+            <div class="condition-clinical-note">
+              <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span>Severe colic pain, fever, or urinary obstruction requires immediate hospital evaluation.</span>
+            </div>
+          </div>
+
+          <div class="condition-card">
+            <div class="condition-header">
+              <div class="condition-icon">
+                <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3"/><circle cx="18" cy="14" r="3"/><path d="M9 12.5v3.5a4 4 0 0 0 4 4h2a3 3 0 0 0 3-3"/></svg>
+              </div>
+              <div>
+                <h3 class="condition-title">Metabolic & Lifestyle Concerns</h3>
+                <span class="badge badge-primary">Complementary Support</span>
+              </div>
+            </div>
+            <p class="condition-body">
+              Supportive guidance for patients living with diabetes, thyroid irregularities, or metabolic fatigue. Designed to work alongside your regular medical routine.
+            </p>
+            <div class="condition-clinical-note">
+              <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span>Prescribed diabetes treatment and blood glucose monitoring must never be stopped without your treating physician's consent.</span>
+            </div>
+          </div>
+
+          <div class="condition-card">
+            <div class="condition-header">
+              <div class="condition-icon">
+                <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div>
+                <h3 class="condition-title">Stress, Sleep & Wellbeing</h3>
+                <span class="badge badge-primary">Counselling & Homeopathy</span>
+              </div>
+            </div>
+            <p class="condition-body">
+              Dr. Harini's background in Psychotherapy provides supportive counselling-oriented sessions for chronic emotional stress, anxiety coping, and non-restorative sleep patterns.
+            </p>
+            <div class="condition-clinical-note">
+              <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>Conducted within qualified scope of clinical psychotherapy and homeopathy.</span>
+            </div>
+          </div>
+
+          <div class="condition-card">
+            <div class="condition-header">
+              <div class="condition-icon">
+                <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <div>
+                <h3 class="condition-title">Acute & Chronic Complaints</h3>
+                <span class="badge badge-primary">Long-term Health Management</span>
+              </div>
+            </div>
+            <p class="condition-body">
+              Personalized evaluation for recurrent respiratory sensitivities, joint stiffness, headaches, and prolonged health concerns where long-term management is sought.
+            </p>
+            <div class="condition-clinical-note">
+              <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>Each plan is reviewed on a scheduled basis to assess ongoing response.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Teleconsultation Works - Section 7 -->
+    <section id="teleconsultation" class="bg-white">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Seamless Telemedicine</span>
+          <h2 class="section-title">How Teleconsultation Works</h2>
+          <p class="section-description">
+            Connecting with our BHMS physicians online is simple, encrypted, and designed around your comfort.
+          </p>
+        </div>
+
+        <div class="teleconsult-steps">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h4>Book Online</h4>
+            <p>Complete the patient registration form, detail your concerns, and pick your preferred time slot.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h4>Connect</h4>
+            <p>Attend your secure video or phone consultation from a quiet, private location of your choice.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h4>Discuss</h4>
+            <p>Share your symptoms, medical history, past prescriptions, and upload previous lab reports.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h4>Care Plan</h4>
+            <p>The physician formulates an individualized homeopathic protocol and lifestyle guidance.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <h4>Follow Up</h4>
+            <p>Schedule a follow-up review via your patient portal to track clinical progress and response.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <button class="btn btn-primary" onclick="consultationManager.openBookingModal('Video Teleconsultation')">
+            Schedule a Teleconsultation Now
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hyderabad Home Visits Section - Section 8 -->
+    <section id="home-visits" class="bg-sage">
+      <div class="container">
+        <div class="home-visit-box">
+          <div class="home-visit-info">
+            <span class="badge badge-primary" style="margin-bottom:0.75rem;">Hyderabad Selected Locations</span>
+            <h3>Need an in-person consultation? Request a home visit.</h3>
+            <p>
+              When an in-person clinical assessment is appropriate, we can arrange an on-site doctor visit across designated localities in Hyderabad. Home visits are scheduled selectively based on physician availability, clinical suitability, and travel feasibility.
+            </p>
+            <p style="font-size:0.86rem; color:#5c7469; display:flex; align-items:center; gap:0.4rem;">
+              <svg class="clinical-icon clinical-icon-xs" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span><strong>Privacy Policy:</strong> We collect your locality or postcode to determine clinical availability; residential addresses are recorded securely only upon appointment confirmation.</span>
+            </p>
+          </div>
+
+          <div class="home-visit-checker">
+            <h4>Check Hyderabad Locality Availability</h4>
+            <div class="locality-select-wrap">
+              <select id="home-visit-locality-select" class="locality-select">
+                <option value="">-- Select Your Locality / Zone --</option>
+                <option value="Banjara Hills">Banjara Hills (500034)</option>
+                <option value="Jubilee Hills">Jubilee Hills (500033)</option>
+                <option value="Gachibowli">Gachibowli (500032)</option>
+                <option value="Madhapur / Hitec City">Madhapur / Hitec City (500081)</option>
+                <option value="Kondapur">Kondapur (500084)</option>
+                <option value="Begumpet">Begumpet (500016)</option>
+                <option value="Somajiguda">Somajiguda (500082)</option>
+                <option value="Secunderabad">Secunderabad (500003)</option>
+                <option value="Kukatpally">Kukatpally (500072)</option>
+                <option value="Mehdipatnam">Mehdipatnam (500028)</option>
+                <option value="Manikonda">Manikonda (500089)</option>
+                <option value="Shamshabad">Shamshabad (Outer)</option>
+                <option value="Ghatkesar">Ghatkesar (Outer)</option>
+              </select>
+            </div>
+            <div id="home-visit-result" class="locality-result"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doctors Profile Section - Section 9 & CV -->
+    <section id="doctors" class="bg-white">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Clinical Leadership</span>
+          <h2 class="section-title">Meet Our Physicians</h2>
+          <p class="section-description">
+            Qualified BHMS practitioners dedicated to thoughtful, holistic patient care and evidence-informed homeopathic consultations.
+          </p>
+        </div>
+
+        <div class="doctors-grid">
+          <!-- Dr. Harini Srinivasan -->
+          <div class="doctor-card">
+            <div class="doctor-image-wrapper">
+              <img src="assets/dr_harini_portrait.jpg?v=20260923" alt="Dr. Harini Srinivasan BHMS Homeopathy Physician">
+              <span class="doctor-badge-status">Lead Physician</span>
+            </div>
+            <div class="doctor-info-body">
+              <h3 class="doctor-name">Dr. Harini Srinivasan</h3>
+              <div class="doctor-degrees">B.H.M.S., M.Sc. (Counselling & Psychotherapy)</div>
+              <div class="doctor-experience-tag">
+                <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span>10 Years Patient-Care Experience</span>
+              </div>
+              <p class="doctor-bio">
+                Dr. Harini graduated with B.H.M.S. from the prestigious Dr. M.G.R. Medical University, Chennai in 2010. She conducted independent clinical homeopathic practice in Chennai from 2010 to 2019, managing both acute and chronic conditions including psoriasis, kidney stones, and lifestyle concerns. Her post-graduate qualification in Counselling and Psychotherapy from Tamil Nadu Open University enables her to integrate compassionate emotional coping support into clinical treatment planning.
+              </p>
+              <ul class="doctor-meta-list">
+                <li><svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> <strong>Languages:</strong> English, Telugu, Tamil</li>
+                <li><svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg> <strong>Registration:</strong> BHMS / State Medical Council Verified</li>
+                <li><svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3"/><circle cx="18" cy="14" r="3"/><path d="M9 12.5v3.5a4 4 0 0 0 4 4h2a3 3 0 0 0 3-3"/></svg> <strong>Focus:</strong> Acute & Chronic Care, Patient Counselling, Teleconsultation</li>
+              </ul>
+              <div class="doctor-compliance-notice">
+                Verified qualifications and medical council registration maintained per Indian telemedicine regulations.
+              </div>
+              <div style="margin-top:1.25rem;">
+                <button class="btn btn-primary btn-sm" style="width:100%;" onclick="consultationManager.openBookingModal('Video Teleconsultation', 'Dr. Harini Srinivasan')">
+                  Consult with Dr. Harini
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partner Doctor -->
+          <div class="doctor-card">
+            <div class="doctor-image-wrapper">
+              <img src="assets/dr_partner.jpg" alt="Dr. Rohan Sharma BHMS Homeopathy Physician">
+              <span class="doctor-badge-status">Partner Physician</span>
+            </div>
+            <div class="doctor-info-body">
+              <h3 class="doctor-name">Dr. Rohan Sharma</h3>
+              <div class="doctor-degrees">B.H.M.S.</div>
+              <div class="doctor-experience-tag">
+                <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Clinical Homeopathic Physician</span>
+              </div>
+              <p class="doctor-bio">
+                Partner homeopathic physician focusing on community health consultations, teleconsultation follow-ups, and selected home visits in Hyderabad. Provides supportive care for recurrent gut complaints, allergies, and seasonal complaints.
+              </p>
+              <ul class="doctor-meta-list">
+                <li><svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> <strong>Languages:</strong> English, Hindi, Telugu</li>
+                <li><svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg> <strong>Registration:</strong> State Council Verification Documented</li>
+                <li><svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3"/><circle cx="18" cy="14" r="3"/><path d="M9 12.5v3.5a4 4 0 0 0 4 4h2a3 3 0 0 0 3-3"/></svg> <strong>Focus:</strong> Teleconsultation, Hyderabad Home Visits</li>
+              </ul>
+              <div class="doctor-compliance-notice">
+                Official registration details are confirmed and published in accordance with medical governance standards.
+              </div>
+              <div style="margin-top:1.25rem;">
+                <button class="btn btn-outline btn-sm" style="width:100%;" onclick="consultationManager.openBookingModal('Video Teleconsultation', 'Dr. Rohan Sharma')">
+                  Consult with Dr. Sharma
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patient Testimonials - Section 12 -->
+    <section id="testimonials" class="bg-subtle">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Verified Patient Experiences</span>
+          <h2 class="section-title">What Our Patients Say</h2>
+          <p class="section-description">
+            Authentic reflections shared with patient consent. Outcomes vary individually, and homeopathic care is personalized for each person.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "Dr. Harini took over an hour to listen to my long-standing skin issues and daily stress patterns. Her counselling background made a real difference in how I manage my eczema flare-ups. The teleconsultation was very smooth."
+            </p>
+            <div class="testimonial-author-box">
+              <div class="testimonial-avatar">PR</div>
+              <div>
+                <div class="testimonial-name">Priya R. (Age 34)</div>
+                <div class="testimonial-concern">Chronic Eczema & Stress Support • Hyderabad</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "I appreciated the doctor's honesty regarding my recurring acidity and digestive trouble. She gave practical dietary advice alongside the homeopathic remedy, and clearly explained when conventional blood tests were needed."
+            </p>
+            <div class="testimonial-author-box">
+              <div class="testimonial-avatar">VK</div>
+              <div>
+                <div class="testimonial-name">Venkatesh K. (Age 48)</div>
+                <div class="testimonial-concern">Digestive Complaints • Madhapur</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              "Arranging a home visit for my elderly mother in Jubilee Hills was very helpful. The physician was patient, respectful, and verified all her current conventional medicines before prescribing."
+            </p>
+            <div class="testimonial-author-box">
+              <div class="testimonial-avatar">AM</div>
+              <div>
+                <div class="testimonial-name">Ananya M. (For Mother, Age 68)</div>
+                <div class="testimonial-concern">Home Visit Consultation • Jubilee Hills</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Health Education & Sponsored Banner - Section 13 -->
+    <div class="container">
+      <div class="ad-sponsorship-strip">
+        <div class="ad-text-wrap">
+          <span class="ad-label">Health Education</span>
+          <div class="ad-message">
+            <strong>Seasonal Health Insight:</strong> Managing skin moisture barrier during seasonal shifts in Hyderabad. Read our guide on gentle non-irritating hydration.
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-sm btn-outline" onclick="alert('Educational resource: Hydration & Skin Care Guide for Hyderabad Climate.')">Read Resource</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section - Section 16 -->
+    <section id="faqs" class="bg-white">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-description">
+            Clear, transparent answers about our teleconsultations, clinic policies, and homeopathic care.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-question-btn">
+              <span>Do you provide online consultations?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes. Our clinic supports scheduled, encrypted video and phone consultations with qualified BHMS physicians, subject to practitioner availability and clinical appropriateness.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn">
+              <span>Can the doctor visit my home in Hyderabad?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Home visits can be requested for selected Hyderabad locations (including Banjara Hills, Jubilee Hills, Gachibowli, Madhapur, Begumpet, Kondapur, etc.) and are subject to schedule availability and clinical suitability.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn">
+              <span>Can homeopathy replace my current prescribed medicines?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              No. Do not stop or change your prescribed conventional medicines without discussing this with the physician who prescribed them. Patients with diabetes, hypertension, and chronic conditions require continuous monitoring and conventional treatment.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn">
+              <span>Will homeopathy cure my condition?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              We do not make cure claims or promise guaranteed results. Treatment response varies between individuals, and appropriate conventional medical evaluation should never be delayed.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn">
+              <span>Can I upload my medical reports and previous prescriptions?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes! Our secure patient portal allows you to upload diagnostic blood tests, ultrasound scans, biopsy results, and past prescriptions for Dr. Harini Srinivasan to review prior to or during your consultation.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn">
+              <span>How do I book an appointment?</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Choose your consultation type (Video, Phone, or Home Visit), complete the online patient form with your symptoms and medical history, pick an available slot, and submit. You will receive an instant confirmation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner - Section 15 -->
+    <section class="bg-subtle" style="border-top: 1px solid #e1ebe5; text-align: center;">
+      <div class="container container-narrow">
+        <span class="section-subtitle">Begin Your Healing Journey</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Your health story deserves time, attention and personalized care.</h2>
+        <p style="font-size: 1.1rem; color: #42574e; margin-bottom: 2rem;">
+          Talk to an experienced BHMS Physician from the comfort of home, or request a selective Hyderabad home visit.
+        </p>
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <button class="btn btn-primary btn-lg" onclick="consultationManager.openBookingModal('Video Teleconsultation')">
+            Book Online Teleconsultation
+          </button>
+          <button class="btn btn-outline btn-lg" onclick="app.openPatientLogin()">
+            Access Patient Portal
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. PATIENT PORTAL VIEW -->
+  <!-- ========================================================================= -->
+  <section id="patient-portal-view" class="portal-view">
+    <div class="container">
+      
+      <!-- Patient Portal Header -->
+      <div class="portal-header-card">
+        <div class="portal-user-meta">
+          <div class="portal-user-avatar-initials" id="patient-avatar-initials">RK</div>
+          <div class="portal-user-details">
+            <h2 id="patient-header-name">Welcome, Rajesh Kumar</h2>
+            <p id="patient-header-meta">Patient ID: <strong>P-101</strong> • Age: 38 (Male) • Locality: Madhapur, Hyderabad • Preferred: English, Telugu</p>
+          </div>
+        </div>
+        <div class="portal-header-actions">
+          <button class="btn btn-sm btn-outline" onclick="app.switchView('public')">
+            ← Back to Clinic Website
+          </button>
+          <button class="btn btn-sm btn-outline" onclick="app.openPatientLogin()" title="Switch Account or Register">
+            Switch Account
+          </button>
+          <button class="btn btn-sm btn-primary" onclick="consultationManager.openBookingModal()">
+            + Book New Consultation
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Sub-Tabs -->
+      <div class="portal-nav-tabs">
+        <button class="portal-tab-btn patient-tab-btn active" data-tab="appointments">
+          <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>My Appointments</span> <span class="portal-tab-badge" id="patient-apt-badge">1</span>
+        </button>
+        <button class="portal-tab-btn patient-tab-btn" data-tab="records">
+          <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span>Medical Records & Reports</span> <span class="portal-tab-badge" id="patient-reports-badge">3</span>
+        </button>
+        <button class="portal-tab-btn patient-tab-btn" data-tab="prescriptions">
+          <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M10.5 20.5l10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+          <span>Prescriptions & Care Plans</span> <span class="portal-tab-badge" id="patient-plans-badge">1</span>
+        </button>
+        <button class="portal-tab-btn patient-tab-btn" data-tab="profile">
+          <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>My Health Summary</span>
+        </button>
+      </div>
+
+      <!-- Sub-Tab 1: Appointments -->
+      <div id="patient-tab-appointments" class="portal-subtab-pane active">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+          <h3 style="font-size:1.3rem;">Scheduled Consultations</h3>
+          <button class="btn btn-sm btn-secondary" onclick="consultationManager.openBookingModal('Video Teleconsultation')">
+            + Schedule Video Consult
+          </button>
+        </div>
+        <div id="patient-appointments-list" class="appointments-grid"></div>
+      </div>
+
+      <!-- Sub-Tab 2: Medical Records & Report Vault -->
+      <div id="patient-tab-records" class="portal-subtab-pane">
+        <div class="upload-dropzone" id="btn-open-upload-modal">
+          <div class="upload-dropzone-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          </div>
+          <h4>Securely Upload Reports or Previous Prescriptions</h4>
+          <p>Click here to attach diagnostic reports, blood test PDFs, skin biopsy notes, or photo of current medicines for Dr. Harini to review.</p>
+          <button type="button" class="btn btn-sm btn-primary" style="margin-top:1rem;">Upload Document</button>
+        </div>
+
+        <h3 style="font-size:1.25rem; margin-bottom:1rem;">Uploaded Medical Records</h3>
+        <div id="patient-reports-list" class="reports-list"></div>
+      </div>
+
+      <!-- Sub-Tab 3: Prescriptions & Care Plans -->
+      <div id="patient-tab-prescriptions" class="portal-subtab-pane">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+          <h3 style="font-size:1.3rem;">Doctor's Prescriptions & Protocols</h3>
+          <span style="font-size:0.85rem; color:#6e847b;">Issued by Dr. Harini Srinivasan (BHMS)</span>
+        </div>
+        <div id="patient-careplans-list"></div>
+      </div>
+
+      <!-- Sub-Tab 4: Health Summary / Profile -->
+      <div id="patient-tab-profile" class="portal-subtab-pane">
+        <div style="background:white; border:1px solid #dce8e1; border-radius:10px; padding:2rem; max-width:760px;">
+          <h3 style="margin-bottom:1.25rem; color:#0d4a38;">Registered Clinical Profile</h3>
+          
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" id="summary-patient-name" value="Rajesh Kumar" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Date of Birth / Age</label>
+              <input type="text" class="form-input" id="summary-patient-age" value="1988-04-12 (38 Years)" readonly>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Mobile Number</label>
+              <input type="text" class="form-input" id="summary-patient-mobile" value="+91 98765 43210" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="text" class="form-input" id="summary-patient-email" value="rajesh.kumar@example.com" readonly>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Primary Health Complaint & History</label>
+            <div id="summary-patient-concern" style="background:#f4f8f5; border:1px solid #d3e6db; padding:0.85rem; border-radius:6px; font-size:0.9rem;">
+              Chronic eczema with recurrent itching on flexor surfaces of arms and neck. Aggravated during warm weather and episodes of professional work stress. Duration: Approximately 2 years.
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Current Conventional Medications</label>
+              <input type="text" class="form-input" id="summary-patient-meds" value="Hydrocortisone 1% topical cream (as needed)" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Known Allergies</label>
+              <input type="text" class="form-input" id="summary-patient-allergies" value="Dust mites, synthetic fragrances, mild penicillin sensitivity" readonly>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Pre-existing Medical Conditions</label>
+            <input type="text" class="form-input" id="summary-patient-conditions" value="Mild essential hypertension (regularly monitored by general physician)" readonly>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. DOCTOR PORTAL VIEW (DR. HARINI SRINIVASAN) -->
+  <!-- ========================================================================= -->
+  <section id="doctor-portal-view" class="portal-view">
+    <div class="container">
+      
+      <!-- Doctor Portal Header -->
+      <div class="portal-header-card">
+        <div class="portal-user-meta">
+          <img src="assets/dr_harini_portrait.jpg?v=20260923" alt="Dr. Harini Srinivasan" class="portal-user-avatar">
+          <div class="portal-user-details">
+            <h2>Dr. Harini Srinivasan, BHMS</h2>
+            <p>Homeopathy Physician & Director • Reg: BHMS/TS/2010/4482 • M.Sc. Counselling & Psychotherapy</p>
+          </div>
+        </div>
+        <div class="portal-header-actions">
+          <button class="btn btn-sm btn-outline" onclick="app.switchView('public')">
+            ← Clinic Site
+          </button>
+          <button class="btn btn-sm btn-primary" onclick="portalsManager.openCarePlanModal('P-101', 'Rajesh Kumar')">
+            <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <span>Issue Care Plan</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Clinical Metrics Row -->
+      <div class="metrics-row">
+        <div class="metric-card">
+          <div class="metric-icon-box green">
+            <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="metric-data">
+            <h4 id="metric-total-patients">4</h4>
+            <p>Active Registered Patients</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon-box blue">
+            <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <div class="metric-data">
+            <h4 id="metric-today-consults">2</h4>
+            <p>Today's Teleconsultations</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon-box amber">
+            <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="metric-data">
+            <h4 id="metric-home-visits">1</h4>
+            <p>Hyderabad Home Visits</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon-box">
+            <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="metric-data">
+            <h4 id="metric-pending-reports">0</h4>
+            <p>Reports Awaiting Review</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Sub-Tabs -->
+      <div class="portal-nav-tabs">
+        <button class="portal-tab-btn doctor-tab-btn active" data-tab="queue">
+          <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+          <span>Consultation Queue</span>
+        </button>
+        <button class="portal-tab-btn doctor-tab-btn" data-tab="reports">
+          <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>Uploaded Patient Reports</span>
+        </button>
+        <button class="portal-tab-btn doctor-tab-btn" data-tab="homevisits">
+          <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Hyderabad Home Visit Dispatcher</span>
+        </button>
+      </div>
+
+      <!-- Sub-Tab 1: Consultation Queue Table -->
+      <div id="doctor-tab-queue" class="doctor-subtab-pane active">
+        <div class="table-card">
+          <div class="table-filter-bar">
+            <h3 style="font-size:1.15rem; color:#0d4a38;">Appointment Schedule & Cases</h3>
+            <div class="table-filter-btns">
+              <button class="filter-btn active" onclick="portalsManager.setDoctorFilter('all', this)">All Appointments</button>
+              <button class="filter-btn" onclick="portalsManager.setDoctorFilter('video', this)">Video Consultations</button>
+              <button class="filter-btn" onclick="portalsManager.setDoctorFilter('home', this)">Home Visits</button>
+            </div>
+          </div>
+          
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>Patient Details</th>
+                <th>Type</th>
+                <th>Slot / Time</th>
+                <th>Chief Clinical Concern</th>
+                <th>Status</th>
+                <th>Clinical Actions</th>
+              </tr>
+            </thead>
+            <tbody id="doctor-appointments-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Sub-Tab 2: Patient Reports -->
+      <div id="doctor-tab-reports" class="doctor-subtab-pane">
+        <div style="margin-bottom:1.5rem;">
+          <h3 style="font-size:1.25rem;">Patient Diagnostic Scans & Prescriptions</h3>
+          <p style="font-size:0.88rem; color:#4a5f56;">Review lab reports, allergy panels, and conventional prescriptions submitted by patients.</p>
+        </div>
+        <div id="doctor-reports-grid" class="reports-list"></div>
+      </div>
+
+      <!-- Sub-Tab 3: Home Visit Dispatcher -->
+      <div id="doctor-tab-homevisits" class="doctor-subtab-pane">
+        <div style="margin-bottom:1.5rem;">
+          <h3 style="font-size:1.25rem;">Hyderabad Home Visit Requests</h3>
+          <p style="font-size:0.88rem; color:#4a5f56;">Evaluate locality appropriateness, patient condition, and practitioner schedule for in-person home visits.</p>
+        </div>
+        <div id="doctor-homevisits-list"></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: PATIENT LOGIN (Section 10 Authentication) -->
+  <!-- ========================================================================= -->
+  <div class="modal-overlay" id="modal-patient-login">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Patient Portal Access</h3>
+        <button class="modal-close-btn" onclick="app.closePatientLogin()">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+        <!-- Tab selector for Existing Patient vs New Patient -->
+        <div class="modal-tabs">
+          <button class="modal-tab-btn active" id="tab-btn-existing-patient" type="button" onclick="app.setPatientModalTab('existing')">
+            Existing Patient Login
+          </button>
+          <button class="modal-tab-btn" id="tab-btn-new-patient" type="button" onclick="app.setPatientModalTab('new')">
+            New Patient Registration
+          </button>
+        </div>
+
+        <!-- PANE 1: Existing Patient Login -->
+        <div id="pane-existing-patient">
+          <form id="patient-login-form" onsubmit="event.preventDefault(); if (window.app) window.app.handlePatientLogin(event);">
+            <div class="form-group">
+              <label class="form-label">Email ID <span style="color:#d32f2f;">*</span></label>
+              <input type="email" class="form-input" id="patient-login-identifier" placeholder="Enter your registered Email ID" required value="">
+              <small id="patient-id-helper" style="color:#6e847b; font-size:0.78rem; margin-top:0.25rem; display:block;">
+                Use the email address provided during registration.
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Password <span style="color:#d32f2f;">*</span></label>
+              <input type="password" class="form-input" id="patient-login-password" placeholder="Enter your password" required value="">
+            </div>
+
+            <button type="submit" id="btn-submit-patient-login" class="btn btn-primary" style="width:100%; cursor:pointer;">
+              Log In to Patient Portal
+            </button>
+          </form>
+
+          <div style="text-align:center; margin-top:1.15rem; font-size:0.85rem; color:#5c7469;">
+            First time consulting Aarogyam? <a href="javascript:void(0)" onclick="app.setPatientModalTab('new')" style="color:#0d4a38; font-weight:600; text-decoration:underline;">Register as a New Patient →</a>
+          </div>
+        </div>
+
+        <!-- PANE 2: New Patient Registration -->
+        <div id="pane-new-patient" style="display:none;">
+          <div style="background:#f7faf8; border:1px solid #dce8e1; padding:0.85rem 1rem; border-radius:6px; margin-bottom:1.25rem; font-size:0.82rem; color:#324d41;">
+            Register your clinical profile below with your <strong>Email ID and Password</strong> to access your confidential Patient Portal.
+          </div>
+
+          <form id="patient-register-form" onsubmit="event.preventDefault(); if (window.app) window.app.handlePatientRegistration(event);">
+            <div class="form-group">
+              <label class="form-label">Full Name <span style="color:#d32f2f;">*</span></label>
+              <input type="text" class="form-input" id="reg-patient-name" placeholder="e.g. Priya Patel" required>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Email Address (Login ID) <span style="color:#d32f2f;">*</span></label>
+                <input type="email" class="form-input" id="reg-patient-email" placeholder="patient@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mobile Number <span style="color:#d32f2f;">*</span></label>
+                <input type="tel" class="form-input" id="reg-patient-mobile" placeholder="+91 98765 43210" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Create Password <span style="color:#d32f2f;">*</span></label>
+              <input type="password" class="form-input" id="reg-patient-password" placeholder="Create a secure password" required minlength="4">
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label class="form-label">Age</label>
+                <input type="number" class="form-input" id="reg-patient-age" placeholder="e.g. 32" min="1" max="115" value="32">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Gender</label>
+                <select class="form-select" id="reg-patient-gender">
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                  <option value="Other">Other / Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Locality / City</label>
+              <input type="text" class="form-input" id="reg-patient-locality" placeholder="e.g. Jubilee Hills, Hyderabad">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Primary Health Concern / Reason for Visit</label>
+              <input type="text" class="form-input" id="reg-patient-concern" placeholder="e.g. Recurrent allergies, chronic eczema, joint pain...">
+            </div>
+
+            <div class="form-checkbox-group" style="margin-bottom:1rem;">
+              <input type="checkbox" id="reg-patient-consent" checked required>
+              <label for="reg-patient-consent" style="font-size:0.8rem; color:#5c7469;">
+                I consent to digital clinical record keeping and agree to Aarogyam Telemedicine guidelines.
+              </label>
+            </div>
+
+            <button type="submit" id="btn-patient-register" class="btn btn-primary" style="width:100%; cursor:pointer;">
+              Complete Registration & Access Portal →
+            </button>
+          </form>
+
+          <div style="text-align:center; margin-top:1.15rem; font-size:0.85rem; color:#5c7469;">
+            Already have an account? <a href="javascript:void(0)" onclick="app.setPatientModalTab('existing')" style="color:#0d4a38; font-weight:600; text-decoration:underline;">← Existing Patient Login</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: DOCTOR LOGIN -->
+  <!-- ========================================================================= -->
+  <div class="modal-overlay" id="modal-doctor-login">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Doctor Clinical Portal Login</h3>
+        <button class="modal-close-btn" onclick="app.closeDoctorLogin()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="background:#f4f8f5; border:1px solid #d3e6db; padding:1rem; border-radius:6px; margin-bottom:1.25rem;">
+          <strong style="color:#0d4a38; font-size:0.9rem;">Physician Portal Quick Access:</strong>
+          <p style="font-size:0.82rem; margin-top:0.25rem; color:#42574e;">
+            Directly open the physician console for <strong>Dr. Harini Srinivasan (BHMS)</strong> to manage appointments, review patient cases, and issue care plans.
+          </p>
+          <button type="button" class="btn btn-sm btn-primary" id="btn-quick-doctor-login" style="margin-top:0.5rem; width:100%;">
+            Login as Dr. Harini Srinivasan
+          </button>
+        </div>
+
+        <div style="text-align:center; color:#6e847b; font-size:0.82rem; margin:1rem 0;">— OR DOCTOR CREDENTIALS —</div>
+
+        <form id="doctor-login-form">
+          <div class="form-group">
+            <label class="form-label">Doctor ID / Council Email</label>
+            <input type="email" class="form-input" placeholder="dr.harini@aarogyam.com" required value="dr.harini@aarogyam.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Access PIN / Password</label>
+            <input type="password" class="form-input" placeholder="••••••••" required value="doctor2026">
+          </div>
+          <button type="submit" class="btn btn-outline" style="width:100%;">Authenticate Physician</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: COMPREHENSIVE CONSULTATION BOOKING WIZARD (Section 10 of PDF) -->
+  <!-- ========================================================================= -->
+  <div class="modal-overlay" id="modal-booking">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3>Patient Registration & Consultation Booking</h3>
+          <span style="font-size:0.82rem; color:#6e847b;">Accredited BHMS Homeopathy Teleconsultation & Home Visits</span>
+        </div>
+        <button class="modal-close-btn" onclick="consultationManager.closeBookingModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="consultation-booking-form">
+          
+          <h4 style="font-size:1rem; color:#0d4a38; margin-bottom:0.75rem; border-bottom:1px solid #e1eee7; padding-bottom:0.35rem;">
+            1. Patient Information
+          </h4>
+
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Full Name <span class="required">*</span></label>
+              <input type="text" id="book-fullname" class="form-input" required placeholder="Patient full legal name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Age / Date of Birth <span class="required">*</span></label>
+              <input type="text" id="book-age" class="form-input" required placeholder="e.g., 38 or DD/MM/YYYY">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Gender</label>
+              <select id="book-gender" class="form-select">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other / Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Mobile Number <span class="required">*</span></label>
+              <input type="tel" id="book-mobile" class="form-input" required placeholder="+91 98765 43210">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" id="book-email" class="form-input" placeholder="name@domain.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Language</label>
+              <select id="book-language" class="form-select">
+                <option value="English">English</option>
+                <option value="Telugu">Telugu</option>
+                <option value="Tamil">Tamil</option>
+                <option value="Hindi">Hindi</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" id="book-locality-wrap">
+            <label class="form-label">City / Locality / Postcode <span class="required">*</span></label>
+            <input type="text" id="book-locality" class="form-input" placeholder="e.g., Madhapur, Banjara Hills, Kondapur, Hyderabad (500081)">
+          </div>
+
+          <h4 style="font-size:1rem; color:#0d4a38; margin:1.25rem 0 0.75rem; border-bottom:1px solid #e1eee7; padding-bottom:0.35rem;">
+            2. Consultation Details
+          </h4>
+
+          <div class="form-row-3">
+            <div class="form-group">
+              <label class="form-label">Consultation Type <span class="required">*</span></label>
+              <select id="book-consult-type" class="form-select" required>
+                <option value="Video Teleconsultation">Video Teleconsultation</option>
+                <option value="Phone Consultation">Phone Consultation</option>
+                <option value="Home Visit Request">Home Visit Request (Hyderabad)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Date <span class="required">*</span></label>
+              <input type="date" id="book-date" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Time Slot <span class="required">*</span></label>
+              <select id="book-time" class="form-select" required>
+                <option value="10:00 AM">10:00 AM – 11:00 AM</option>
+                <option value="11:30 AM">11:30 AM – 12:30 PM</option>
+                <option value="02:30 PM">02:30 PM – 03:30 PM</option>
+                <option value="04:30 PM">04:30 PM – 05:30 PM</option>
+                <option value="06:00 PM">06:00 PM – 07:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Preferred Doctor</label>
+            <select id="book-doctor" class="form-select">
+              <option value="Dr. Harini Srinivasan">Dr. Harini Srinivasan, BHMS, M.Sc. (10 Yrs Experience)</option>
+              <option value="Dr. Rohan Sharma">Dr. Rohan Sharma, BHMS (Partner Physician)</option>
+            </select>
+          </div>
+
+          <h4 style="font-size:1rem; color:#0d4a38; margin:1.25rem 0 0.75rem; border-bottom:1px solid #e1eee7; padding-bottom:0.35rem;">
+            3. Health History & Clinical Background
+          </h4>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Main Health Concern <span class="required">*</span></label>
+              <input type="text" id="book-concern" class="form-input" required placeholder="e.g., Chronic eczema, digestive bloating, kidney stone follow-up">
+            </div>
+            <div class="form-group">
+              <label class="form-label">How long have you had this concern?</label>
+              <input type="text" id="book-duration" class="form-input" placeholder="e.g., 6 months, 2 years">
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Current Medicines</label>
+              <input type="text" id="book-current-meds" class="form-input" placeholder="List all current conventional medications">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Known Allergies</label>
+              <input type="text" id="book-allergies" class="form-input" placeholder="Food, dust, penicillin, sulfa, etc.">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Existing Medical Conditions</label>
+            <input type="text" id="book-existing-conditions" class="form-input" placeholder="Diabetes, thyroid, blood pressure, etc.">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Upload Previous Reports / Prescriptions (Optional)</label>
+            <input type="file" id="book-reports-file" class="form-input" accept=".pdf,.jpg,.jpeg,.png">
+            <small style="color:#6e847b;">Accepted formats: PDF, JPG, PNG (Max 10MB). Can also be uploaded later in Patient Portal.</small>
+          </div>
+
+          <div class="form-group" style="margin-top:1rem;">
+            <label class="form-checkbox-label">
+              <input type="checkbox" id="book-consent" required checked>
+              <span><strong>Consent:</strong> I confirm that the information provided is accurate and I consent to being contacted regarding my consultation. I understand that scheduled homeopathic consultations do not replace emergency medical care.</span>
+            </label>
+          </div>
+
+          <div class="modal-footer" style="padding-left:0; padding-right:0;">
+            <button type="button" class="btn btn-outline" onclick="consultationManager.closeBookingModal()">Cancel</button>
+            <button type="submit" class="btn btn-primary">Confirm & Book Consultation</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: DOCUMENT UPLOAD -->
+  <!-- ========================================================================= -->
+  <div class="modal-overlay" id="modal-upload-report">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>Upload Medical Report</h3>
+        <button class="modal-close-btn" onclick="portalsManager.closeUploadModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="report-upload-form">
+          <div class="form-group">
+            <label class="form-label">Document Title <span class="required">*</span></label>
+            <input type="text" id="upload-doc-title" class="form-input" required placeholder="e.g., Liver Function Test, Renal Ultrasound Scan">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Document Type</label>
+            <select id="upload-doc-type" class="form-select">
+              <option value="pdf">Diagnostic Lab Report (PDF)</option>
+              <option value="image">Doctor's Prescription / Scan (Image)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Diagnostic Centre / Origin</label>
+            <input type="text" id="upload-doc-lab" class="form-input" placeholder="e.g., Vijaya Diagnostics, Apollo Clinic">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Clinical Notes for Doctor</label>
+            <textarea id="upload-doc-notes" class="form-textarea" rows="3" placeholder="Add any specific context or date when test was performed..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Choose File</label>
+            <input type="file" class="form-input" required>
+          </div>
+          <div class="modal-footer" style="padding-left:0; padding-right:0;">
+            <button type="button" class="btn btn-outline" onclick="portalsManager.closeUploadModal()">Cancel</button>
+            <button type="submit" class="btn btn-primary">Upload to Patient Vault</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: PATIENT MEDICAL CHART VIEW (Doctor View) -->
+  <!-- ========================================================================= -->
+  <div class="modal-overlay" id="modal-patient-chart">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3 id="chart-patient-name">Patient Case Chart</h3>
+          <span id="chart-patient-meta" style="font-size:0.85rem; color:#6e847b;"></span>
+        </div>
+        <button class="modal-close-btn" onclick="portalsManager.closePatientChart()">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="form-row-2" style="margin-bottom:1rem;">
+          <div>
+            <strong style="font-size:0.85rem; color:#6e847b;">Contact Phone:</strong>
+            <p id="chart-patient-phone" style="font-weight:600;"></p>
+          </div>
+          <div>
+            <strong style="font-size:0.85rem; color:#6e847b;">Email Address:</strong>
+            <p id="chart-patient-email" style="font-weight:600;"></p>
+          </div>
+        </div>
+
+        <div style="background:#f4f8f5; border:1px solid #d3e6db; border-radius:6px; padding:1rem; margin-bottom:1.25rem;">
+          <strong style="color:#0d4a38; display:block; margin-bottom:0.25rem;">Chief Clinical Complaint:</strong>
+          <p id="chart-patient-concern" style="font-size:0.92rem; color:#14231d;"></p>
+          <div style="font-size:0.82rem; color:#5c7469; margin-top:0.25rem;">
+            Duration: <span id="chart-patient-duration" style="font-weight:600;"></span>
+          </div>
+        </div>
+
+        <div class="form-row-2" style="margin-bottom:1.25rem;">
+          <div style="border:1px solid #e1eee7; padding:0.85rem; border-radius:6px;">
+            <strong style="color:#0d4a38; font-size:0.88rem; display:block; margin-bottom:0.25rem;">Current Conventional Medicines</strong>
+            <p id="chart-patient-meds" style="font-size:0.88rem; color:#42574e;"></p>
+          </div>
+          <div style="border:1px solid #e1eee7; padding:0.85rem; border-radius:6px;">
+            <strong style="color:#0d4a38; font-size:0.88rem; display:block; margin-bottom:0.25rem;">Known Allergies & Sensitivities</strong>
+            <p id="chart-patient-allergies" style="font-size:0.88rem; color:#42574e;"></p>
+          </div>
+        </div>
+
+        <div style="margin-bottom:1.25rem;">
+          <strong style="color:#0d4a38; font-size:0.88rem; display:block; margin-bottom:0.25rem;">Existing Medical Conditions</strong>
+          <p id="chart-patient-conditions" style="font-size:0.88rem; color:#42574e;"></p>
+        </div>
+
+        <h4 style="font-size:0.95rem; color:#0d4a38; margin-bottom:0.5rem; border-bottom:1px solid #e1eee7; padding-bottom:0.35rem;">
+          Uploaded Laboratory Scans & Records
+        </h4>
+        <div id="chart-patient-reports"></div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" onclick="portalsManager.closePatientChart()">Close Chart</button>
+        <button type="button" class="btn btn-primary" onclick="portalsManager.closePatientChart(); portalsManager.openCarePlanModal('P-101', 'Rajesh Kumar')">
+          Prescribe Care Plan
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: DOCTOR CARE PLAN & HOMEOPATHIC PRESCRIPTION GENERATOR -->
+  <!-- ========================================================================= -->
+  <div class="modal-overlay" id="modal-careplan-generator">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3>Issue Homeopathic Care Plan</h3>
+          <span style="font-size:0.82rem; color:#6e847b;">Aarogyam Homeopathy • Clinical Prescription Writer</span>
+        </div>
+        <button class="modal-close-btn" onclick="portalsManager.closeCarePlanModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="doctor-careplan-form">
+          <input type="hidden" id="cp-patient-id" value="P-101">
+          <input type="hidden" id="cp-patient-name" value="Rajesh Kumar">
+
+          <div class="form-group">
+            <label class="form-label">Clinical Assessment & Presentation</label>
+            <input type="text" id="cp-complaint" class="form-input" value="Chronic Eczematous dermatitis with pruritus aggravated by warmth, comorbid work-related stress" required>
+          </div>
+
+          <h4 style="font-size:0.95rem; color:#0d4a38; margin:1.25rem 0 0.5rem; border-bottom:1px solid #e1eee7; padding-bottom:0.35rem;">
+            Homeopathic Remedy Formulation
+          </h4>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Remedy Name <span class="required">*</span></label>
+              <input type="text" id="cp-remedy1-name" class="form-input" value="Graphites" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Potency</label>
+              <input type="text" id="cp-remedy1-potency" class="form-input" value="30C" required>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Dosage & Frequency</label>
+              <input type="text" id="cp-remedy1-dosage" class="form-input" value="4 globules twice daily" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Instructions for Administration</label>
+              <input type="text" id="cp-remedy1-inst" class="form-input" value="Take 15 minutes away from food, coffee or mint. Dissolve dry under tongue." required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Lifestyle, Dietary & Counselling Advice</label>
+            <textarea id="cp-lifestyle" class="form-textarea" rows="3">Maintain natural hydration with lukewarm water. Apply cold-pressed coconut oil gently on affected skin. 15 minutes daily mindfulness diaphragmatic breathing before sleep.</textarea>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Recommended Follow-up Timeline</label>
+              <input type="text" id="cp-followup" class="form-input" value="14 Days (Teleconsultation Review)" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Consulting Physician</label>
+              <input type="text" class="form-input" value="Dr. Harini Srinivasan (BHMS, M.Sc.)" readonly>
+            </div>
+          </div>
+
+          <div class="modal-footer" style="padding-left:0; padding-right:0;">
+            <button type="button" class="btn btn-outline" onclick="portalsManager.closeCarePlanModal()">Cancel</button>
+            <button type="submit" class="btn btn-primary">Generate & Sync to Patient Portal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: SIMULATED TELEMEDICINE VIDEO CONSULTATION ROOM -->
+  <!-- ========================================================================= -->
+  <div class="modal-overlay" id="modal-video-room">
+    <div class="modal-dialog modal-lg" style="max-width:960px; background:#071511; border:1px solid #1c3930;">
+      
+      <div class="video-room-topbar">
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#2dd49d; box-shadow:0 0 8px #2dd49d;"></span>
+          <strong style="color:#ffffff; font-size:0.95rem;">Encrypted Clinical Session</strong>
+          <span style="font-size:0.82rem; color:#88b5a2;">• Patient: <span id="video-patient-name">Rajesh Kumar</span></span>
+        </div>
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <span style="font-family:monospace; background:#112920; padding:0.25rem 0.65rem; border-radius:4px; color:#2dd49d;" id="video-timer">00:00</span>
+          <button class="btn btn-sm btn-outline" style="border-color:#2a4f40; color:#cde4d9;" onclick="consultationManager.endTeleconsultation()">Exit</button>
+        </div>
+      </div>
+
+      <div class="video-room-screens">
+        <div class="main-video-feed">
+          <img src="assets/dr_harini_official.jpg?v=20260923" alt="Dr. Harini Srinivasan Teleconsultation feed">
+          <div class="video-feed-label">
+            <svg class="clinical-icon clinical-icon-sm" viewBox="0 0 24 24"><path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3"/><circle cx="18" cy="14" r="3"/><path d="M9 12.5v3.5a4 4 0 0 0 4 4h2a3 3 0 0 0 3-3"/></svg>
+            <span id="video-doctor-name">Dr. Harini Srinivasan</span> (Physician)
+          </div>
+          <div class="self-video-pip" id="self-pip-video">
+            <div style="text-align:center; font-size:0.76rem; color:#89a89c;">
+              <svg class="clinical-icon clinical-icon-lg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><br>Rajesh Kumar (You)
+            </div>
+          </div>
+        </div>
+
+        <div class="video-notes-panel">
+          <h4>Clinical Discussion Notes</h4>
+          <textarea class="video-notes-area" placeholder="Live consultation notes, symptom observations, reported modalities..."></textarea>
+          <div style="font-size:0.78rem; color:#789c8e; display:flex; align-items:center; gap:0.35rem;">
+            <svg class="clinical-icon clinical-icon-xs" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>End-to-end encrypted telemedicine session under Medical Council Telemedicine Practice Guidelines.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-room-controls">
+        <button class="ctrl-btn" id="btn-toggle-mic" onclick="consultationManager.toggleAudio()" title="Toggle Microphone">
+          <svg class="clinical-icon" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </button>
+        <button class="ctrl-btn" id="btn-toggle-cam" onclick="consultationManager.toggleVideo()" title="Toggle Camera">
+          <svg class="clinical-icon" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </button>
+        <button class="ctrl-btn" onclick="app.showToast('Secure screen sharing active for reviewing lab reports.', 'info')" title="Share Medical Document">
+          <svg class="clinical-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </button>
+        <button class="ctrl-btn btn-end-call" onclick="consultationManager.endTeleconsultation()" title="End Consultation" style="display:inline-flex; align-items:center; gap:0.4rem;">
+          <svg class="clinical-icon" viewBox="0 0 24 24"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"/></svg>
+          <span>End Call</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER & LEGAL DISCLAIMERS (Section 17 of PDF) -->
+  <!-- ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <!-- Regulatory Disclaimer Box -->
+      <div class="footer-legal-box">
+        <strong>Important Healthcare Notice & Legal Disclaimer:</strong> Information on this website is provided for general patient education and does not constitute emergency medical advice. Consultation outcomes vary by individual. The clinic does not guarantee cures or specific results. Please provide accurate medical information and disclose current conventional medicines and relevant diagnoses. For acute, rapidly worsening, or emergency symptoms, seek immediate hospital emergency care.
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <img src="assets/logo.jpg" alt="Aarogyam Logo">
+            <div>
+              <div class="footer-brand-title">Aarogyam Homeopathy</div>
+              <div class="footer-tagline">Hyderabad • Teleconsultation</div>
+            </div>
+          </div>
+          <p class="footer-about-text">
+            A patient-first homeopathic practice in Hyderabad combining personalized BHMS consultations, convenient teleconsultations, and selected home visits. Our clinical approach focuses on listening carefully, whole-person understanding, and maintaining continuity of care.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Dr. Harini Srinivasan</a></li>
+            <li><a href="#treatments">Conditions & Areas of Care</a></li>
+            <li><a href="#teleconsultation">How Teleconsultation Works</a></li>
+            <li><a href="#home-visits">Hyderabad Home Visits</a></li>
+            <li><a href="#testimonials">Patient Testimonials</a></li>
+            <li><a href="#faqs">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Clinical Portals</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="app.openPatientLogin()">Patient Portal Login</a></li>
+            <li><a href="javascript:void(0)" onclick="app.openDoctorLogin()">Physician Portal Login</a></li>
+            <li><a href="javascript:void(0)" onclick="consultationManager.openBookingModal('Video Teleconsultation')">Book Video Consult</a></li>
+            <li><a href="javascript:void(0)" onclick="consultationManager.openBookingModal('Home Visit Request')">Request Home Visit</a></li>
+            <li><a href="javascript:void(0)" onclick="app.switchView('patient')">Medical Records Vault</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact & Service Area</h4>
+          <div class="footer-contact-item">
+            <svg class="clinical-icon clinical-icon-sm" style="flex-shrink:0; margin-top:3px;" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Selected Service Localities: Banjara Hills, Jubilee Hills, Gachibowli, Madhapur, Begumpet, Hyderabad, Telangana.</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="clinical-icon clinical-icon-sm" style="flex-shrink:0;" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>care@aarogyamhomeopathy.in</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="clinical-icon clinical-icon-sm" style="flex-shrink:0;" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+91 40 2345 6789 (Mon – Sat: 9:30 AM – 6:30 PM)</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="clinical-icon clinical-icon-sm" style="flex-shrink:0;" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span>Lead Physician: Dr. Harini Srinivasan, BHMS (Dr. M.G.R. Med Univ, 2010), M.Sc. Psychotherapy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Aarogyam Homeopathy. All rights reserved. Registered BHMS Homeopathic Practice.
+        </div>
+        <div class="footer-policy-links">
+          <a href="javascript:void(0)" onclick="alert('Privacy Policy: All patient health information is protected and confidential.')">Privacy Policy</a>
+          <a href="javascript:void(0)" onclick="alert('Terms of Use: Telemedicine consultations operate under Indian telemedicine regulations.')">Terms of Use</a>
+          <a href="javascript:void(0)" onclick="alert('Teleconsultation Consent: Informed consent is obtained prior to video/phone appointments.')">Teleconsultation Consent</a>
+          <a href="javascript:void(0)" onclick="alert('Cancellation & Refund Policy: Appointments may be rescheduled or refunded with 4 hours notice.')">Cancellation & Refund Policy</a>
+          <a href="javascript:void(0)" onclick="alert('Medical Disclaimer: No guaranteed cures; complementary care with conventional medicine safety.')">Medical Disclaimer</a>
+          <a href="javascript:void(0)" onclick="alert('Doctor Registration: Verified with State Medical Council.')">Doctor Registration Details</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Supabase Cloud Database SDK & Service -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js?v=20260923_email_pw"></script>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/data.js?v=20260923_email_pw"></script>
+  <script src="js/consultation.js?v=20260923_email_pw"></script>
+  <script src="js/portals.js?v=20260923_email_pw"></script>
+  <script src="js/app.js?v=20260923_email_pw"></script>
+</body>
+</html>
